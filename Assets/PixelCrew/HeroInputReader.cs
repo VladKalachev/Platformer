@@ -1,29 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HeroInputReader : MonoBehaviour
 {
-    private Hero _hero;
-    private void Awake()
+    [SerializeField] private Hero _hero;
+    
+    public void OnHorizontalMovement(InputAction.CallbackContext context)
     {
-       _hero = GetComponent<Hero>();
-    }
-
-    private void Update()
-    {
-        var horizonmtal = Input.GetAxis("Horizontal");
-        _hero.SetDirection(horizonmtal);
-        
-        // if (Input.GetKey(KeyCode.A)) 
-        // { 
-        //     _hero.SetDirection(-1);
-        // } else if (Input.GetKey(KeyCode.D))
-        // {
-        //     _hero.SetDirection(1);
-        // }
-        // else
-        // {
-        //     _hero.SetDirection(0);
-        // }
+        var direction = context.ReadValue<float>();
+        _hero.SetDirection(direction);
     }
 }
