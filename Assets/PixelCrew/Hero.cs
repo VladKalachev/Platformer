@@ -7,13 +7,10 @@ namespace  PixelCrew
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
-        [SerializeField] private LayerMask _groundLayer;
         
-        [SerializeField] private float _groundCheckRadius;
-        [SerializeField] private Vector3 _groundCheckPositionDelta;
+        [SerializeField] private LayoutCheck _groundCheck;
         
         private Rigidbody2D _rigidbody;
-        
         private Vector2 _direction;
 
         private void Awake()
@@ -39,14 +36,13 @@ namespace  PixelCrew
 
         private bool IsGrounded()
         {
-           var hit = Physics2D.CircleCast(transform.position + _groundCheckPositionDelta, _groundCheckRadius, Vector2.down, 0, _groundLayer);
-           return hit.collider != null;
+            return _groundCheck.IsTouchingLayer;
         }
 
         private void OnDrawGizmos()
         { 
             Gizmos.color = IsGrounded() ? Color.green : Color.red;
-            Gizmos.DrawSphere(transform.position + _groundCheckPositionDelta, _groundCheckRadius);
+            Gizmos.DrawSphere(transform.position, 0.1f);
         }
     }
 };
