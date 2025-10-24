@@ -28,9 +28,16 @@ namespace  PixelCrew
             _rigidbody.linearVelocity = new Vector2(_direction.x * _speed, _rigidbody.linearVelocity.y);
             
             var isJumping = _direction.y > 0;
-            if (isJumping && IsGrounded())
+            if (isJumping)
             {
-                _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+                if (IsGrounded())
+                {
+                    _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);    
+                }
+            } else if (_rigidbody.linearVelocity.y > 0)
+            {
+                _rigidbody.linearVelocity =
+                    new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.5f);
             }
         }
 
@@ -38,11 +45,6 @@ namespace  PixelCrew
         {
             return _groundCheck.IsTouchingLayer;
         }
-
-        private void OnDrawGizmos()
-        { 
-            Gizmos.color = IsGrounded() ? Color.green : Color.red;
-            Gizmos.DrawSphere(transform.position, 0.1f);
-        }
+        
     }
 };
