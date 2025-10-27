@@ -16,7 +16,6 @@ namespace PixelCrew
         private float _secondsPerFrame;
         private int _currentSpriteIndex;
         private float _nextFrameTime;
-
         
         private void Start()
         {
