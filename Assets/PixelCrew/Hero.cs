@@ -15,6 +15,8 @@ namespace  PixelCrew
         
         private Animator _animator;
         private SpriteRenderer _sprite;
+        private bool _isGrounded;
+        private bool _allowDoubleJump;
         
         private static readonly int IsGround =  Animator.StringToHash("is-ground");
         private static readonly int IsVerticalVelocity =  Animator.StringToHash("vertical-velocity");
@@ -25,6 +27,11 @@ namespace  PixelCrew
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator =  GetComponent<Animator>();
             _sprite =  GetComponent<SpriteRenderer>();
+        }
+
+        private void Update()
+        {
+            _isGrounded = IsGrounded();
         }
 
         public void SetDirection(Vector2 direction)
@@ -45,27 +52,52 @@ namespace  PixelCrew
 
         private void FixedUpdate()
         {
-            _rigidbody.linearVelocity = new Vector2(_direction.x * _speed, _rigidbody.linearVelocity.y);
+            var xVelocity = _direction.x * _speed;
+            var yVelocity = CalculateYVelocity();
+            _rigidbody.linearVelocity = new Vector2(xVelocity, yVelocity);
             
-            var isJumping = _direction.y > 0;
-            var isGrounded = IsGrounded();
-            if (isJumping)
-            {
-                if (isGrounded && _rigidbody.linearVelocity.y <= 0)
-                {
-                    _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);    
-                }
-            } else if (_rigidbody.linearVelocity.y > 0)
-            {
-                _rigidbody.linearVelocity =
-                    new Vector2(_rigidbody.linearVelocity.x, _rigidbody.linearVelocity.y * 0.5f);
-            }
-            
-            _animator.SetBool(IsGround, isGrounded);
+            _animator.SetBool(IsGround, _isGrounded);
             _animator.SetBool(IsRunning, _direction.x != 0);
             _animator.SetFloat(IsVerticalVelocity, _rigidbody.linearVelocity.y);
             
             UpdateSpriteDirection();
+        }
+
+        private float CalculateYVelocity()
+        {
+            var yVelocity = _rigidbody.linearVelocity.y;
+            var isJumpPressing = _direction.y > 0;
+           
+            if (_isGrounded) _allowDoubleJump = true;
+            
+            if (isJumpPressing) 
+            {
+                yVelocity = CalculateJumpVelocity(yVelocity);
+            }
+            else if (_rigidbody.linearVelocity.y > 0)
+            {
+                yVelocity *= 0.5f;
+            }
+
+            return yVelocity;
+        }
+
+        private float CalculateJumpVelocity(float yVelocity)
+        {
+            var isFalling = _rigidbody.linearVelocity.y <= 0.001f;
+            
+            if (!isFalling) return yVelocity;
+
+            if (_isGrounded)
+            {
+                yVelocity += _jumpSpeed;
+            } else if (_allowDoubleJump)
+            {
+                yVelocity = _jumpSpeed;
+                _allowDoubleJump = false;
+            }
+            
+            return yVelocity;
         }
 
         private bool IsGrounded()
