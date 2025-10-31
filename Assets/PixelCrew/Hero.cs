@@ -1,4 +1,5 @@
 using System;
+using PixelCrew.Components;
 using UnityEngine;
 
 namespace  PixelCrew
@@ -8,11 +9,14 @@ namespace  PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
-        [SerializeField] private LayoutCheck _groundCheck;
+        [SerializeField] private LayoutCheck _groundLayer;
+        [SerializeField] private float _ineractionRadius;
+        [SerializeField] private LayerMask _interactionLayer;
         
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
         
+        private Collider2D[] _ineractionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
@@ -107,7 +111,7 @@ namespace  PixelCrew
 
         private bool IsGrounded()
         {
-            return _groundCheck.IsTouchingLayer;
+            return _groundLayer.IsTouchingLayer;
         }
 
         public void AddCoins(int coins)
@@ -120,6 +124,25 @@ namespace  PixelCrew
         {
             _animator.SetTrigger(Hit);
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _damageJumpSpeed);
+        }
+
+        public void Interact()
+        {
+            var size = Physics2D.OverlapCircleNonAlloc(
+                transform.position, 
+                _ineractionRadius, 
+                _ineractionResult, 
+                _interactionLayer
+                );
+
+            for (int i = 0; i < size; i++)
+            {
+                var interactable = _ineractionResult[i].GetComponent<InteractableComponent>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
     }
 };
