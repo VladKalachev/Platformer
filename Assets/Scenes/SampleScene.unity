@@ -766,9 +766,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.002601908
-    width: 1.4601625
-    height: 1.3142889
+    y: 0.050303556
+    width: 1
+    height: 0.9000976
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -4009,6 +4009,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &877907669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877907670}
+  m_Layer: 0
+  m_Name: TeleportDestination
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &877907670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877907669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.06, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893829265
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,8 +4725,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1561962205}
   - component: {fileID: 1561962204}
+  - component: {fileID: 1561962207}
+  - component: {fileID: 1561962206}
+  - component: {fileID: 1561962208}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4769,12 +4803,89 @@ Transform:
   m_GameObject: {fileID: 1561962203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.89, y: -10.06, z: 0}
+  m_LocalPosition: {x: 11.72, y: -9.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1561962206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561962203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b2fbb609b2477f8828bfaecd592349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.TeleportComponent
+  _destTransform: {fileID: 877907670}
+--- !u!114 &1561962207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561962203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac69bf5725942486d8a5c26db2b26641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.EnterCollisionComponent
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1561962206}
+        m_TargetAssemblyTypeName: PixelCrew.Components.TeleportComponent, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!58 &1561962208
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561962203}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  m_Radius: 0.67
 --- !u!1 &1579602467
 GameObject:
   m_ObjectHideFlags: 0
@@ -5781,11 +5892,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3312933725904258653, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.99
+      value: 6.91
       objectReference: {fileID: 0}
     - target: {fileID: 3312933725904258653, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02
+      value: -9.994
       objectReference: {fileID: 0}
     - target: {fileID: 3312933725904258653, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6023,6 +6134,7 @@ SceneRoots:
   - {fileID: 147748806}
   - {fileID: 893829266}
   - {fileID: 1561962205}
+  - {fileID: 877907670}
   - {fileID: 201489945732312927}
   - {fileID: 5949718766082400679}
   - {fileID: 423339884196636446}
