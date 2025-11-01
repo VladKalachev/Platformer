@@ -4355,14 +4355,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Hero
   _speed: 3
   _jumpSpeed: 12
-  _damageJumpSpeed: 80
-  _groundLayer: {fileID: 53918317}
+  _damageJumpSpeed: 15
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   _ineractionRadius: 1
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 64
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
+  _hitParticles: {fileID: 0}
 --- !u!114 &1245290457
 MonoBehaviour:
   m_ObjectHideFlags: 0

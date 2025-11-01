@@ -9,12 +9,14 @@ namespace  PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
-        [SerializeField] private LayoutCheck _groundLayer;
+        [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _ineractionRadius;
         [SerializeField] private LayerMask _interactionLayer;
         
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
+        
+        [SerializeField] private ParticleSystem _hitParticles;
         
         private Collider2D[] _ineractionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
@@ -23,6 +25,7 @@ namespace  PixelCrew
         private SpriteRenderer _sprite;
         private bool _isGrounded;
         private bool _allowDoubleJump;
+        private bool _isJumping;
         
         private static readonly int IsGround =  Animator.StringToHash("is-ground");
         private static readonly int IsVerticalVelocity =  Animator.StringToHash("vertical-velocity");
@@ -76,14 +79,19 @@ namespace  PixelCrew
         {
             var yVelocity = _rigidbody.linearVelocity.y;
             var isJumpPressing = _direction.y > 0;
-           
-            if (_isGrounded) _allowDoubleJump = true;
+
+            if (_isGrounded)
+            {
+                _allowDoubleJump = true;
+                _isJumping = false;
+            }
             
             if (isJumpPressing) 
             {
+                _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
             }
-            else if (_rigidbody.linearVelocity.y > 0)
+            else if (_rigidbody.linearVelocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -111,7 +119,9 @@ namespace  PixelCrew
 
         private bool IsGrounded()
         {
-            return _groundLayer.IsTouchingLayer;
+            var hit = Physics2D.CircleCast(transform.position + _groundCheckPositionDelta, _groundCheckRadius,
+                Vector2.down, 0, _groundLayer);
+            return hit.collider != null;
         }
 
         public void AddCoins(int coins)
@@ -122,8 +132,27 @@ namespace  PixelCrew
 
         public void TakeDamage()
         {
+            _isJumping = false;
             _animator.SetTrigger(Hit);
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _damageJumpSpeed);
+
+            if (_coins > 0)
+            {
+                SpawnCoins();
+            }
+        }
+
+        private void SpawnCoins()
+        {
+            var numCoinsToDispose = Mathf.Min(_coins, 5);
+            _coins -= numCoinsToDispose;
+
+            var burst = _hitParticles.emission.GetBurst(0);
+            burst.count = numCoinsToDispose;
+            _hitParticles.emission.SetBurst(0, burst);
+            
+            _hitParticles.gameObject.SetActive(true);
+            _hitParticles.Play();
         }
 
         public void Interact()
