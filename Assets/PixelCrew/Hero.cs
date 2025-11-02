@@ -16,13 +16,13 @@ namespace  PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
         
+        [SerializeField] private SpawnComponent _footStepParticles;
         [SerializeField] private ParticleSystem _hitParticles;
         
         private Collider2D[] _ineractionResult = new Collider2D[1];
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
-        private SpriteRenderer _sprite;
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private bool _isJumping;
@@ -38,7 +38,6 @@ namespace  PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator =  GetComponent<Animator>();
-            _sprite =  GetComponent<SpriteRenderer>();
         }
 
         private void Update()
@@ -55,10 +54,10 @@ namespace  PixelCrew
         {
             if (_direction.x > 0)
             {
-                _sprite.flipX = false;
+                transform.localScale = Vector3.one;
             } else if (_direction.x < 0)
             {
-                _sprite.flipX = true;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
 
@@ -172,6 +171,11 @@ namespace  PixelCrew
                     interactable.Interact();
                 }
             }
+        }
+
+        public void SpawnFootDust()
+        {
+            _footStepParticles.Spawn();
         }
     }
 };

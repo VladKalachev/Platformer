@@ -766,9 +766,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050303556
-    width: 1
-    height: 0.9000976
+    y: 0.050123256
+    width: 0.99999994
+    height: 0.8999076
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -4339,6 +4339,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 53918315}
+  - {fileID: 1768717906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1245290456
@@ -4365,6 +4366,7 @@ MonoBehaviour:
     m_Bits: 64
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
+  _footStepParticles: {fileID: 1768717907}
   _hitParticles: {fileID: 0}
 --- !u!114 &1245290457
 MonoBehaviour:
@@ -5190,6 +5192,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1768717905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768717906}
+  - component: {fileID: 1768717907}
+  m_Layer: 0
+  m_Name: FootStepsPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768717906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768717905}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.332, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245290454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1768717907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768717905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 1768717906}
+  _prefab: {fileID: 1590669508923895862, guid: cfdcfe9de54a2485383d46db9743b2ff, type: 3}
 --- !u!1 &1778375213
 GameObject:
   m_ObjectHideFlags: 0
