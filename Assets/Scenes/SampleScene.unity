@@ -246,15 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAnimation
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: -6018279857378552221, guid: 94a2a47da6a814228aaab923e4c3cf25, type: 3}
-  - {fileID: 1875919636, guid: 94a2a47da6a814228aaab923e4c3cf25, type: 3}
-  - {fileID: -1964493134, guid: 94a2a47da6a814228aaab923e4c3cf25, type: 3}
-  - {fileID: -186509948, guid: 94a2a47da6a814228aaab923e4c3cf25, type: 3}
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+  _clips: []
 --- !u!212 &147748805
 SpriteRenderer:
   serializedVersion: 2
@@ -15970,6 +15965,10 @@ PrefabInstance:
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773962605865973270, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _clips.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
