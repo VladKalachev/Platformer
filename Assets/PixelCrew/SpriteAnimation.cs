@@ -20,6 +20,17 @@ namespace PixelCrew
 
         private int _currentClip;
         
+        private void Awake()
+        {
+            if (_clips == null || _clips.Length == 0)
+            {
+                enabled = false;
+                _isPlaying = false;
+                return;
+            }
+            _currentClip = Mathf.Clamp(_currentClip, 0, _clips.Length - 1);
+        }
+        
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();
@@ -42,7 +53,7 @@ namespace PixelCrew
             for (var i = 0; i < _clips.Length; i++)
             {
                 if (_clips[i].Name == clipName)
-                {
+                {   
                     _currentClip = i;
                     StartAnimation();
                     return;
@@ -68,11 +79,11 @@ namespace PixelCrew
         private void Update()
         {
             if (_nextFrameTime > Time.time) return;
-            
+          
             var clip = _clips[_currentClip];
-            
             if (_currentFrame >= clip.Sprites.Length)
             {
+              
                 if (clip.Loop)
                 {
                     _currentFrame = 0;
@@ -91,6 +102,7 @@ namespace PixelCrew
                 }
                 return;
             }
+            
             _renderer.sprite = clip.Sprites[_currentFrame];
             _nextFrameTime += _secPerFrame;
             _currentFrame++;
