@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace PixelCrew.Components
 {
@@ -18,7 +19,9 @@ namespace PixelCrew.Components
         private IEnumerator AnimationTeleport(GameObject target)
         {
             var sprite = target.GetComponent<SpriteRenderer>();
-
+            var input = target.GetComponent<PlayerInput>();
+            SetLockInput(input, true);
+            
             yield return AlphaAnimation(sprite, 0);
             target.SetActive(false);
 
@@ -26,6 +29,15 @@ namespace PixelCrew.Components
           
             target.SetActive(true);
             yield return AlphaAnimation(sprite, 1);
+            SetLockInput(input, false);
+        }
+
+        private void SetLockInput(PlayerInput input, bool lsLocked)
+        {
+            if (input != null)
+            {
+                input.enabled = !lsLocked;
+            }
         }
 
         private IEnumerator MoveAnimation(GameObject target)
