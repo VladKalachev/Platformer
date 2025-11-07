@@ -81,9 +81,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -314198425
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8cf4749d942f8486c9bbed71d7061464, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 934db38c3328d4c9db8cb7566d1bd1e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _clips:
-  - _name: run
+  - _name: slamDown
     _sprites:
     - {fileID: 21300000, guid: 934db38c3328d4c9db8cb7566d1bd1e0, type: 3}
     - {fileID: 21300000, guid: 3c0e1efcd0c3f4117bd52423090a08ba, type: 3}

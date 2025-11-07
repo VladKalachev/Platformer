@@ -1,5 +1,6 @@
 using System;
 using PixelCrew.Components;
+using PixelCrew.Utils;
 using UnityEngine;
 
 namespace  PixelCrew
@@ -9,6 +10,7 @@ namespace  PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
+        [SerializeField] private float _slamDownVelocity;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _ineractionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -174,6 +176,18 @@ namespace  PixelCrew
                 if (interactable != null)
                 {
                     interactable.Interact();
+                }
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.IsInLayer(_groundLayer))
+            {
+                var contact = other.contacts[0];
+                if (contact.relativeVelocity.y >= _slamDownVelocity)
+                {
+                    _slamDownParticles.Spawn();
                 }
             }
         }

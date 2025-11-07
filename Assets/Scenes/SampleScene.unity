@@ -871,9 +871,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.008216927
-    width: 1.3112481
-    height: 1.1800021
+    y: 0.050123256
+    width: 0.99999994
+    height: 0.8999076
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -9592,6 +9592,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1190334488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1190334490}
+  - component: {fileID: 1190334489}
+  m_Layer: 0
+  m_Name: JumpSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1190334489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190334488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 1190334490}
+  _prefab: {fileID: 1590669508923895862, guid: 06f6124b5d3a5417d80b574d70f7b052, type: 3}
+--- !u!4 &1190334490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190334488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06, y: -0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245290454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245290452
 GameObject:
   m_ObjectHideFlags: 0
@@ -9691,6 +9737,8 @@ Transform:
   - {fileID: 1947773551}
   - {fileID: 53918315}
   - {fileID: 1768717906}
+  - {fileID: 1190334490}
+  - {fileID: 2132495262}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1245290456
@@ -9708,6 +9756,7 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageJumpSpeed: 15
+  _slamDownVelocity: 9
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9718,6 +9767,8 @@ MonoBehaviour:
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
   _footStepParticles: {fileID: 1768717907}
+  _jumpParticles: {fileID: 1190334489}
+  _slamDownParticles: {fileID: 2132495261}
   _hitParticles: {fileID: 1947773549}
 --- !u!114 &1245290457
 MonoBehaviour:
@@ -10353,7 +10404,7 @@ GameObject:
   m_Layer: 0
   m_Name: FootStepsPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15835,6 +15886,52 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8658865705940521661, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
   m_PrefabInstance: {fileID: 423339884196636446}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2132495260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132495262}
+  - component: {fileID: 2132495261}
+  m_Layer: 0
+  m_Name: SlamDownSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2132495261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132495260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 2132495262}
+  _prefab: {fileID: 1590669508923895862, guid: 4d877d3e3e9ad4299ba938a444a1011a, type: 3}
+--- !u!4 &2132495262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132495260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06, y: -0.034, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245290454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135005163
 GameObject:
   m_ObjectHideFlags: 0
