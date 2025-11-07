@@ -157,8 +157,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2961804105630734987}
-        m_TargetAssemblyTypeName: PixelCrew.Components.DamageComponent, Assembly-CSharp
-        m_MethodName: ApplyDamage
+        m_TargetAssemblyTypeName: PixelCrew.Components.ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: Apply
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -180,4 +180,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d631128c1c8bf42638bbaddf45156d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.DamageComponent
-  _damage: 1
+  _hpDelta: -1

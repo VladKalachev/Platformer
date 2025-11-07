@@ -190,12 +190,12 @@ TextureImporter:
       name: Potions_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 129
-        width: 9
-        height: 15
+        x: 0
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Potions_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 129
-        width: 9
-        height: 15
+        x: 32
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: Potions_2
       rect:
         serializedVersion: 2
-        x: 76
-        y: 129
-        width: 9
-        height: 15
+        x: 64
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: Potions_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 129
-        width: 9
-        height: 15
+        x: 96
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: Potions_4
       rect:
         serializedVersion: 2
-        x: 140
-        y: 129
-        width: 9
-        height: 15
+        x: 128
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: Potions_5
       rect:
         serializedVersion: 2
-        x: 172
-        y: 129
-        width: 9
-        height: 15
+        x: 160
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: Potions_6
       rect:
         serializedVersion: 2
-        x: 204
-        y: 129
-        width: 9
-        height: 15
+        x: 192
+        y: 120
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: Potions_7
       rect:
         serializedVersion: 2
-        x: 11
-        y: 89
-        width: 11
-        height: 16
+        x: 0
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,12 +366,12 @@ TextureImporter:
       name: Potions_8
       rect:
         serializedVersion: 2
-        x: 43
-        y: 89
-        width: 11
-        height: 16
+        x: 32
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,12 +388,12 @@ TextureImporter:
       name: Potions_9
       rect:
         serializedVersion: 2
-        x: 75
-        y: 89
-        width: 11
-        height: 16
+        x: 64
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -410,12 +410,12 @@ TextureImporter:
       name: Potions_10
       rect:
         serializedVersion: 2
-        x: 107
-        y: 89
-        width: 11
-        height: 16
+        x: 96
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -432,12 +432,12 @@ TextureImporter:
       name: Potions_11
       rect:
         serializedVersion: 2
-        x: 139
-        y: 89
-        width: 11
-        height: 16
+        x: 128
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,12 +454,12 @@ TextureImporter:
       name: Potions_12
       rect:
         serializedVersion: 2
-        x: 171
-        y: 89
-        width: 11
-        height: 16
+        x: 160
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,12 +476,12 @@ TextureImporter:
       name: Potions_13
       rect:
         serializedVersion: 2
-        x: 203
-        y: 89
-        width: 11
-        height: 16
+        x: 192
+        y: 80
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -498,12 +498,12 @@ TextureImporter:
       name: Potions_14
       rect:
         serializedVersion: 2
-        x: 9
-        y: 49
-        width: 15
-        height: 19
+        x: 0
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -520,12 +520,12 @@ TextureImporter:
       name: Potions_15
       rect:
         serializedVersion: 2
-        x: 41
-        y: 49
-        width: 15
-        height: 19
+        x: 32
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -542,12 +542,12 @@ TextureImporter:
       name: Potions_16
       rect:
         serializedVersion: 2
-        x: 73
-        y: 49
-        width: 15
-        height: 19
+        x: 64
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -564,12 +564,12 @@ TextureImporter:
       name: Potions_17
       rect:
         serializedVersion: 2
-        x: 103
-        y: 23
-        width: 18
-        height: 45
+        x: 96
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -586,12 +586,12 @@ TextureImporter:
       name: Potions_18
       rect:
         serializedVersion: 2
-        x: 137
-        y: 49
-        width: 15
-        height: 19
+        x: 128
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -608,12 +608,12 @@ TextureImporter:
       name: Potions_19
       rect:
         serializedVersion: 2
-        x: 169
-        y: 49
-        width: 15
-        height: 19
+        x: 160
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -630,12 +630,12 @@ TextureImporter:
       name: Potions_20
       rect:
         serializedVersion: 2
-        x: 201
-        y: 49
-        width: 15
-        height: 19
+        x: 192
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -652,12 +652,12 @@ TextureImporter:
       name: Potions_21
       rect:
         serializedVersion: 2
-        x: 13
-        y: 9
-        width: 6
-        height: 23
+        x: 0
+        y: 0
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -674,12 +674,12 @@ TextureImporter:
       name: Potions_22
       rect:
         serializedVersion: 2
-        x: 45
-        y: 22
-        width: 6
-        height: 14
+        x: 32
+        y: 0
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -696,12 +696,12 @@ TextureImporter:
       name: Potions_23
       rect:
         serializedVersion: 2
-        x: 51
-        y: 16
-        width: 6
-        height: 14
+        x: 64
+        y: 0
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -718,12 +718,12 @@ TextureImporter:
       name: Potions_24
       rect:
         serializedVersion: 2
-        x: 77
-        y: 28
-        width: 6
-        height: 11
+        x: 96
+        y: 0
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -736,121 +736,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Potions_25
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 22
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 269f39a4edf5a7a50800000000000000
-      internalID: 6519628818910804322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_26
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 0
-        width: 6
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4481eb13b6b49ca90800000000000000
-      internalID: -7293215197781682108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_27
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 4
-        width: 6
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4adc44edf7799680800000000000000
-      internalID: -8747828868849804721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_28
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 11
-        width: 6
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b36d548a62a8ffcb0800000000000000
-      internalID: -4827988376881342917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potions_29
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 15
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f40d8234be03fff00800000000000000
-      internalID: 1152693816632332367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 45c07bbf360454e7daa6f21a0f7b6ec3
     internalID: 0
     vertices: []
     indices: 
@@ -858,7 +748,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":4.0},"gridSpriteSize":{"x":32.0,"y":40.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Potions_0: 1185527514606905908
       Potions_1: -1061600653231999548
@@ -878,11 +770,6 @@ TextureImporter:
       Potions_22: 8167133005111728920
       Potions_23: 2014349484240403859
       Potions_24: 6326803469982491369
-      Potions_25: 6519628818910804322
-      Potions_26: -7293215197781682108
-      Potions_27: -8747828868849804721
-      Potions_28: -4827988376881342917
-      Potions_29: 1152693816632332367
       Potions_3: 6997616985800771554
       Potions_4: 8618505411793156745
       Potions_5: -1972361127685065434
