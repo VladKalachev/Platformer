@@ -16,7 +16,10 @@ namespace  PixelCrew
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
         
+        [Space] [Header("Particles")]
         [SerializeField] private SpawnComponent _footStepParticles;
+        [SerializeField] private SpawnComponent _jumpParticles;
+        [SerializeField] private SpawnComponent _slamDownParticles;
         [SerializeField] private ParticleSystem _hitParticles;
         
         private Collider2D[] _ineractionResult = new Collider2D[1];
@@ -107,9 +110,11 @@ namespace  PixelCrew
             if (_isGrounded)
             {
                 yVelocity += _jumpSpeed;
+                _jumpParticles.Spawn();
             } else if (_allowDoubleJump)
             {
                 yVelocity = _jumpSpeed;
+                _jumpParticles.Spawn();
                 _allowDoubleJump = false;
             }
             
