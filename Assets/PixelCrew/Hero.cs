@@ -1,6 +1,7 @@
 using System;
 using PixelCrew.Components;
 using PixelCrew.Utils;
+using UnityEditor;
 using UnityEngine;
 
 namespace  PixelCrew
@@ -39,6 +40,7 @@ namespace  PixelCrew
         private static readonly int IsVerticalVelocity =  Animator.StringToHash("vertical-velocity");
         private static readonly int IsRunning =  Animator.StringToHash("is-running");
         private static readonly int Hit =  Animator.StringToHash("hit");
+        private static readonly int AttackKey =  Animator.StringToHash("attack");
         
         private int _coins;
         
@@ -133,6 +135,14 @@ namespace  PixelCrew
             return hit.collider != null;
         }
 
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            Handles.color = IsGrounded() ? HandlesUtils.TransparentGreen : HandlesUtils.TransparentRed;
+            Handles.DrawWireDisc(transform.position + _groundCheckPositionDelta, Vector3.forward, _groundCheckRadius);
+        } 
+#endif
+       
         public void AddCoins(int coins)
         {
             _coins += coins;
@@ -202,13 +212,14 @@ namespace  PixelCrew
 
         public void Attack()
         {
+            _animator.SetTrigger(AttackKey);
            var gos =  _attackRange.GetObjectsInRange();
            foreach (var go in gos)
            {
                var hp = go.GetComponent<HealtComponent>();
-               if (hp != null)
+               if (hp != null && go.CompareTag("Enemy"))
                {
-                   hp.ModifyHealth(_damage);
+                   hp.ModifyHealth(-_damage);
                }
            }
         }

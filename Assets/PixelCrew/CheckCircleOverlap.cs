@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using PixelCrew.Utils;
 using UnityEditor;
 using UnityEngine;
 
@@ -26,6 +27,7 @@ namespace PixelCrew
 
         private void OnDrawGizmosSelected()
         {
+            Handles.color = HandlesUtils.TransparentRed;
             Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
         }
     }

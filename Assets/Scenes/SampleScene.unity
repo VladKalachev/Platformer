@@ -871,9 +871,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.049951028
+    y: 0.050433412
     width: 1
-    height: 0.90022033
+    height: 0.8998227
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -965,6 +965,51 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &593161809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593161810}
+  - component: {fileID: 593161811}
+  m_Layer: 0
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &593161810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593161809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.485, y: -0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1245290454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &593161811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593161809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0c66937db8483182baccd70c8376ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.CheckCircleOverlap
+  _radius: 0.2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6178457153852211956, guid: 3c164eb00d088443ca6c1156c5380e46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.79
+      value: -14.174
       objectReference: {fileID: 0}
     - target: {fileID: 6178457153852211956, guid: 3c164eb00d088443ca6c1156c5380e46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9808,6 +9853,7 @@ Transform:
   - {fileID: 1768717906}
   - {fileID: 1190334490}
   - {fileID: 2132495262}
+  - {fileID: 593161810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1245290456
@@ -9830,11 +9876,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _ineractionRadius: 1
+  _damage: 1
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 64
   _groundCheckRadius: 0.3
   _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
+  _attackRange: {fileID: 593161811}
   _footStepParticles: {fileID: 1768717907}
   _jumpParticles: {fileID: 1190334489}
   _slamDownParticles: {fileID: 2132495261}
