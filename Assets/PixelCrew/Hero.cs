@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using UnityEditor;
@@ -177,6 +178,14 @@ namespace  PixelCrew
             
             _hitParticles.gameObject.SetActive(true);
             _hitParticles.Play();
+            
+            StartCoroutine(DisableParticlesAfterPlay());
+        }
+        
+        private IEnumerator DisableParticlesAfterPlay()
+        {
+            yield return new WaitWhile(() => _hitParticles.isPlaying);
+            _hitParticles.gameObject.SetActive(false);
         }
 
         public void Interact()
