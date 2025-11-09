@@ -2,6 +2,7 @@ using System;
 using PixelCrew.Components;
 using PixelCrew.Utils;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace  PixelCrew
@@ -19,6 +20,9 @@ namespace  PixelCrew
         
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
+
+        [SerializeField] private AnimatorController _armed;
+        [SerializeField] private AnimatorController _disarmed;
         
         [SerializeField] private CheckCircleOverlap _attackRange;
         
@@ -43,6 +47,7 @@ namespace  PixelCrew
         private static readonly int AttackKey =  Animator.StringToHash("attack");
         
         private int _coins;
+        private bool _isArmed;
         
         private void Awake()
         {
@@ -212,16 +217,28 @@ namespace  PixelCrew
 
         public void Attack()
         {
+            if (!_isArmed) return;
+            
             _animator.SetTrigger(AttackKey);
-           var gos =  _attackRange.GetObjectsInRange();
-           foreach (var go in gos)
-           {
-               var hp = go.GetComponent<HealtComponent>();
-               if (hp != null && go.CompareTag("Enemy"))
-               {
-                   hp.ModifyHealth(-_damage);
-               }
-           }
+        }
+
+        public void OnAttack()
+        {
+            var gos =  _attackRange.GetObjectsInRange();
+            foreach (var go in gos)
+            {
+                var hp = go.GetComponent<HealtComponent>();
+                if (hp != null && go.CompareTag("Enemy"))
+                {
+                    hp.ModifyHealth(-_damage);
+                }
+            }  
+        }
+
+        public void ArmHero()
+        {
+            _isArmed = true;
+            _animator.runtimeAnimatorController = _armed;
         }
     }
 };
