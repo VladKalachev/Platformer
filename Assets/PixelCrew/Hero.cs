@@ -13,10 +13,13 @@ namespace  PixelCrew
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _ineractionRadius;
+        [SerializeField] private int _damage;
         [SerializeField] private LayerMask _interactionLayer;
         
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
+        
+        [SerializeField] private CheckCircleOverlap _attackRange;
         
         [Space] [Header("Particles")]
         [SerializeField] private SpawnComponent _footStepParticles;
@@ -195,6 +198,19 @@ namespace  PixelCrew
         public void SpawnFootDust()
         {
             _footStepParticles.Spawn();
+        }
+
+        public void Attack()
+        {
+           var gos =  _attackRange.GetObjectsInRange();
+           foreach (var go in gos)
+           {
+               var hp = go.GetComponent<HealtComponent>();
+               if (hp != null)
+               {
+                   hp.ModifyHealth(_damage);
+               }
+           }
         }
     }
 };
