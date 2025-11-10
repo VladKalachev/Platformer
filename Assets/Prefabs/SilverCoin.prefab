@@ -121,8 +121,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _clips: []
-  _playOnStart: 0
-  _logDebug: 0
 --- !u!1 &783950196315443757
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +353,7 @@ MonoBehaviour:
     - {fileID: 99433059, guid: da306ac7a8ec6407d808f4d0dd7535ab, type: 3}
     - {fileID: 1360785600, guid: da306ac7a8ec6407d808f4d0dd7535ab, type: 3}
     - {fileID: -929001359, guid: da306ac7a8ec6407d808f4d0dd7535ab, type: 3}
-    _loop: 1
+    _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
@@ -373,8 +371,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  _playOnStart: 0
-  _logDebug: 0
 --- !u!114 &6079648365693585170
 MonoBehaviour:
   m_ObjectHideFlags: 0
