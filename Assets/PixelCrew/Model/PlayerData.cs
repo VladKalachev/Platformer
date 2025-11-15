@@ -7,6 +7,6 @@ namespace PixelCrew.Model
     {
         public int Coins;
         public int Hp;
-        public int IsArmed;
+        public bool IsArmed;
     }
 }
