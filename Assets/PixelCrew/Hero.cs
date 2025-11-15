@@ -64,7 +64,8 @@ namespace  PixelCrew
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            
+            var health = GetComponent<HealtComponent>();
+            health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
         }
 

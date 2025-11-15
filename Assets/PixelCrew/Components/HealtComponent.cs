@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,7 +33,15 @@ namespace PixelCrew.Components
             }
         }
         
+        public void SetHealth(int health)
+        {
+            _health = health;
+        }
+        
+        [Serializable]
         public class HealthChangeEvent: UnityEvent<int> {}
+
+      
     }    
 }
 
