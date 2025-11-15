@@ -68,6 +68,11 @@ namespace  PixelCrew
             UpdateHeroWeapon();
         }
 
+        public void OnHealthChanged(int currentHealth)
+        {
+            _session.Data.Hp = currentHealth;
+        }
+
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;  
