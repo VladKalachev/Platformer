@@ -19,6 +19,7 @@ namespace  PixelCrew
         [SerializeField] private float _ineractionRadius;
         [SerializeField] private int _damage;
         [SerializeField] private LayerMask _interactionLayer;
+        [SerializeField] private float _damageVelocity;
         
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
@@ -228,6 +229,11 @@ namespace  PixelCrew
                 if (contact.relativeVelocity.y >= _slamDownVelocity)
                 {
                     _slamDownParticles.Spawn();
+                }
+
+                if (contact.relativeVelocity.y >= _damageVelocity)
+                {
+                    GetComponent<HealtComponent>().ModifyHealth(-1);
                 }
             }
         }
