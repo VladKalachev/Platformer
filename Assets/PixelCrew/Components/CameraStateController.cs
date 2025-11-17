@@ -6,7 +6,7 @@ namespace PixelCrew.Components
     public class CameraStateController: MonoBehaviour
     {
         [SerializeField] private Animator _animator;
-        [SerializeField] private CinemachineVirtualCamera _camera;
+        [SerializeField] private CinemachineVirtualCameraBase _camera;
         
         private static readonly int ShowTargetKey = Animator.StringToHash("ShowTarget");
 
