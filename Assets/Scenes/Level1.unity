@@ -499,7 +499,7 @@ Transform:
   m_GameObject: {fileID: 343331057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.14, y: -0.00000064074993, z: -18.978626}
+  m_LocalPosition: {x: 11.14, y: -0, z: -18.978626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 384220833}
   - component: {fileID: 384220832}
   - component: {fileID: 384220831}
+  - component: {fileID: 384220834}
   m_Layer: 0
   m_Name: State-Driven Camera
   m_TagString: Untagged
@@ -580,7 +581,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
-  AnimatedTarget: {fileID: 1100417422}
+  AnimatedTarget: {fileID: 384220831}
   LayerIndex: 0
   Instructions:
   - FullHash: 492734158
@@ -611,10 +612,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 343331061}
   - {fileID: 1100417419}
+  - {fileID: 343331061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &384220834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384220830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ada7d8fc3d483892a8fc4eac7833f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.CameraStateController
+  _animator: {fileID: 384220831}
+  _camera: {fileID: 343331058}
 --- !u!1 &440561598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1243,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.92, y: -0.09, z: -10}
+  m_LocalPosition: {x: 8.47, y: -10.06, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1414,6 +1429,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &611366797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4823425089294237889, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+  m_PrefabInstance: {fileID: 423339884196636446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,7 +11592,6 @@ GameObject:
   - component: {fileID: 1100417417}
   - component: {fileID: 1100417420}
   - component: {fileID: 1100417421}
-  - component: {fileID: 1100417422}
   m_Layer: 0
   m_Name: FollowCamera
   m_TagString: Untagged
@@ -11612,8 +11631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 2
+    Enabled: 1
+    m_Value: 1
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -11651,7 +11670,7 @@ Transform:
   m_GameObject: {fileID: 1100417416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20247984, y: -0.29845, z: -10}
+  m_LocalPosition: {x: 12.59248, y: -10.268451, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11689,28 +11708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePixelPerfect
---- !u!95 &1100417422
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100417416}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a51a09ca22cb74b26876207d88dc1e9e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1145584343 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 647608052948538600, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
@@ -11982,6 +11979,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1677406298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7230918180570507507, guid: 1b8e7fa075d974f12b3b5ad4015f7a7d, type: 3}
+  m_PrefabInstance: {fileID: 5949718766082400679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1703864966
 GameObject:
   m_ObjectHideFlags: 0
@@ -12667,6 +12669,78 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8658865705940521661, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
   m_PrefabInstance: {fileID: 423339884196636446}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2021599100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611366797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408345dd058848d6a1cca44a40e7fd2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ShowTargetComponent
+  _target: {fileID: 1677406298}
+  _controller: {fileID: 384220834}
+  _delay: 2
+--- !u!114 &2021599101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611366797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60ae01496dde432cba1b77de29717cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.TimerComponent
+  _timers:
+  - Delay: 0.5
+    OnTimersUp:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2021599100}
+          m_TargetAssemblyTypeName: PixelCrew.Components.ShowTargetComponent, Assembly-CSharp
+          m_MethodName: ShowTarget
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2021599101}
+          m_TargetAssemblyTypeName: PixelCrew.Components.TimerComponent, Assembly-CSharp
+          m_MethodName: SetTimer
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - Delay: 1
+    OnTimersUp:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 986038059}
+          m_TargetAssemblyTypeName: PixelCrew.Components.SwitchComponent, Assembly-CSharp
+          m_MethodName: Switch
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &2034044986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12999,6 +13073,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
@@ -13008,9 +13086,17 @@ PrefabInstance:
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 2021599101}
+    - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
       objectReference: {fileID: 986038059}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
@@ -13019,6 +13105,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: Switch
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
@@ -13027,6 +13117,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PixelCrew.Components.TimerComponent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: PixelCrew.Components.SwitchComponent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
@@ -13037,6 +13131,10 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3984877821882280237, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4823425089294237889, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
       propertyPath: m_Name
       value: Helm
@@ -13045,7 +13143,13 @@ PrefabInstance:
     - {fileID: 2725857689637190992, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4823425089294237889, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2021599100}
+    - targetCorrespondingSourceObject: {fileID: 4823425089294237889, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2021599101}
   m_SourcePrefab: {fileID: 100100000, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
 --- !u!1001 &773225081090422696
 PrefabInstance:
@@ -13516,11 +13620,11 @@ PrefabInstance:
       objectReference: {fileID: 662111805}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.92
+      value: 8.47
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: -10.06
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.z
