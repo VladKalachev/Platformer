@@ -236,6 +236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero_0
       objectReference: {fileID: 0}
+    - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: _damageVelocity
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.76
@@ -3479,9 +3483,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.04954955
+    y: 0.050134286
     width: 1
-    height: 0.90000004
+    height: 0.89989924
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
