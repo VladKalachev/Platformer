@@ -20,6 +20,7 @@ namespace  PixelCrew
         [SerializeField] private int _damage;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private float _damageVelocity;
+        [SerializeField] private LayoutCheck _wallCheck;
         
         [SerializeField] private float _groundCheckRadius;
         [SerializeField] private Vector3 _groundCheckPositionDelta;
@@ -42,6 +43,7 @@ namespace  PixelCrew
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private bool _isJumping;
+        private bool _isOnWall;
         
         private static readonly int IsGround =  Animator.StringToHash("is-ground");
         private static readonly int IsVerticalVelocity =  Animator.StringToHash("vertical-velocity");
@@ -50,16 +52,29 @@ namespace  PixelCrew
         private static readonly int AttackKey =  Animator.StringToHash("attack");
 
         private GameSession _session;
+        private float _defaultGravityScale;
         
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator =  GetComponent<Animator>();
+            _defaultGravityScale = _rigidbody.gravityScale;
         }
 
         private void Update()
         {
             _isGrounded = IsGrounded();
+
+            if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
+            {
+                _isOnWall = true;
+                _rigidbody.gravityScale = 0;
+            }
+            else
+            {
+                _isOnWall = false;
+                _rigidbody.gravityScale = _defaultGravityScale;
+            }
         }
 
         private void Start()
@@ -119,6 +134,10 @@ namespace  PixelCrew
             {
                 _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
+            }
+            else if (_isOnWall)
+            {
+                yVelocity = 0f;
             }
             else if (_rigidbody.linearVelocity.y > 0 && _isJumping)
             {

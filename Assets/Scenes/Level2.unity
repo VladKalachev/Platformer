@@ -232,6 +232,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 598990918145429496, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: IsTouchingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 719091940323104344, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5008346943987993646, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Name
       value: Hero_0
@@ -239,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: _damageVelocity
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404953677520678187, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.185
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -555,6 +567,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &937855878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092032225592598020, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022018549784905144, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
+      propertyPath: m_Name
+      value: Platform
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 06f5810f5f4b64d7d9640aabb1fafb51, type: 3}
 --- !u!1 &958854262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2988,7 @@ GameObject:
   - component: {fileID: 997502541}
   - component: {fileID: 997502540}
   - component: {fileID: 997502539}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3801,10 +3870,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.050077043
-    width: 1
-    height: 0.9000867
+    x: 0.0370727
+    y: 0
+    width: 1.191462
+    height: 1.0724192
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5123,3 +5192,4 @@ SceneRoots:
   - {fileID: 364597184}
   - {fileID: 1063286721}
   - {fileID: 2111175433}
+  - {fileID: 937855878}
