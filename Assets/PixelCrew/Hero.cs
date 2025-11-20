@@ -129,6 +129,11 @@ namespace  PixelCrew
                 _allowDoubleJump = true;
                 _isJumping = false;
             }
+
+            if (_isOnWall)
+            {
+                _allowDoubleJump = true;
+            }
             
             if (isJumpPressing) 
             {
