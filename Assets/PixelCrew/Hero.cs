@@ -12,7 +12,7 @@ namespace  PixelCrew
 {
     public class Hero : Creature
     {
-        [SerializeField] private LayerMask _interactionLayer;
+        [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayoutCheck _wallCheck;
         
         [SerializeField] private float _slamDownVelocity;
@@ -23,8 +23,7 @@ namespace  PixelCrew
         
         [Space] [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
-        
-        private Collider2D[] _interactionResult = new Collider2D[1];
+
         private bool _allowDoubleJump;
         private bool _isOnWall;
         
@@ -34,7 +33,7 @@ namespace  PixelCrew
         protected override void Awake()
         {
             base.Awake();
-            _defaultGravityScale = _rigidbody.gravityScale;
+            _defaultGravityScale = Rigidbody.gravityScale;
         }
         
         private void Start()
@@ -54,23 +53,23 @@ namespace  PixelCrew
         protected override void Update()
         {
             base.Update();
-            if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
+            if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
             {
                 _isOnWall = true;
-                _rigidbody.gravityScale = 0;
+                Rigidbody.gravityScale = 0;
             }
             else
             {
                 _isOnWall = false;
-                _rigidbody.gravityScale = _defaultGravityScale;
+                Rigidbody.gravityScale = _defaultGravityScale;
             }
         }
         
         protected override float CalculateYVelocity()
         {
-            var isJumpPressing = _direction.y > 0;
+            var isJumpPressing = Direction.y > 0;
 
-            if (_isGrounded || _isOnWall)
+            if (IsGrounded || _isOnWall)
             {
                 _allowDoubleJump = true;
             }
@@ -85,7 +84,7 @@ namespace  PixelCrew
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!_isGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump)
             {
                 _particles.Spawn("Jump");
                 _allowDoubleJump = false;
@@ -133,21 +132,7 @@ namespace  PixelCrew
 
         public void Interact()
         {
-            var size = Physics2D.OverlapCircleNonAlloc(
-                transform.position, 
-                _ineractionRadius, 
-                _interactionResult, 
-                _interactionLayer
-                );
-
-            for (int i = 0; i < size; i++)
-            {
-                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
-                if (interactable != null)
-                {
-                    interactable.Interact();
-                }
-            }
+            _interactionCheck.Check();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -182,7 +167,7 @@ namespace  PixelCrew
 
         private void UpdateHeroWeapon()
         {
-            _animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+            Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
         }
     }
 };

@@ -18,10 +18,10 @@ namespace PixelCrew.Creatures
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
         
-        protected Rigidbody2D _rigidbody;
-        protected Vector2 _direction;
-        protected Animator _animator;
-        protected bool _isGrounded;
+        protected Rigidbody2D Rigidbody;
+        protected Vector2 Direction;
+        protected Animator Animator;
+        protected bool IsGrounded;
         private bool _isJumping;
         
         private static readonly int IsGround =  Animator.StringToHash("is-ground");
@@ -32,39 +32,39 @@ namespace PixelCrew.Creatures
 
         protected virtual void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _animator =  GetComponent<Animator>();
+            Rigidbody = GetComponent<Rigidbody2D>();
+            Animator =  GetComponent<Animator>();
         }
         
         public void SetDirection(Vector2 direction)
         {
-            _direction = direction;  
+            Direction = direction;  
         }
 
         protected virtual void Update()
         {
-            _isGrounded = _groundCheck.IsTouchingLayer;
+            IsGrounded = _groundCheck.IsTouchingLayer;
         }
         
         private void FixedUpdate()
         {
-            var xVelocity = _direction.x * _speed;
+            var xVelocity = Direction.x * _speed;
             var yVelocity = CalculateYVelocity();
-            _rigidbody.linearVelocity = new Vector2(xVelocity, yVelocity);
+            Rigidbody.linearVelocity = new Vector2(xVelocity, yVelocity);
             
-            _animator.SetBool(IsGround, _isGrounded);
-            _animator.SetBool(IsRunning, _direction.x != 0);
-            _animator.SetFloat(IsVerticalVelocity, _rigidbody.linearVelocity.y);
+            Animator.SetBool(IsGround, IsGrounded);
+            Animator.SetBool(IsRunning, Direction.x != 0);
+            Animator.SetFloat(IsVerticalVelocity, Rigidbody.linearVelocity.y);
             
             UpdateSpriteDirection();
         }
         
         private void UpdateSpriteDirection()
         {
-            if (_direction.x > 0)
+            if (Direction.x > 0)
             {
                 transform.localScale = Vector3.one;
-            } else if (_direction.x < 0)
+            } else if (Direction.x < 0)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
@@ -73,10 +73,10 @@ namespace PixelCrew.Creatures
         
         protected virtual float CalculateYVelocity()
         {
-            var yVelocity = _rigidbody.linearVelocity.y;
-            var isJumpPressing = _direction.y > 0;
+            var yVelocity = Rigidbody.linearVelocity.y;
+            var isJumpPressing = Direction.y > 0;
 
-            if (_isGrounded)
+            if (IsGrounded)
             {
                 _isJumping = false;
             }
@@ -85,10 +85,10 @@ namespace PixelCrew.Creatures
             {
                 _isJumping = true;
                 
-                var isFalling = _rigidbody.linearVelocity.y <= 0.001f;
+                var isFalling = Rigidbody.linearVelocity.y <= 0.001f;
                 yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
             }
-            else if (_rigidbody.linearVelocity.y > 0 && _isJumping)
+            else if (Rigidbody.linearVelocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
@@ -98,7 +98,7 @@ namespace PixelCrew.Creatures
 
         protected virtual float CalculateJumpVelocity(float yVelocity)
         {
-            if (_isGrounded)
+            if (IsGrounded)
             {
                 yVelocity += _jumpSpeed;
                 _particles.Spawn("Jump");
@@ -110,27 +110,19 @@ namespace PixelCrew.Creatures
         public virtual void TakeDamage()
         {
             _isJumping = false;
-            _animator.SetTrigger(Hit);
-            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _damageVelocity);
+            Animator.SetTrigger(Hit);
+            Rigidbody.linearVelocity = new Vector2(Rigidbody.linearVelocity.x, _damageVelocity);
 
         }
         
         public virtual void Attack()
         {
-            _animator.SetTrigger(AttackKey);
+            Animator.SetTrigger(AttackKey);
         }
         
         public void OnDoAttack()
         {
-            var gos =  _attackRange.GetObjectsInRange();
-            foreach (var go in gos)
-            {
-                var hp = go.GetComponent<HealtComponent>();
-                if (hp != null && go.CompareTag("Enemy"))
-                {
-                    hp.ModifyHealth(-_damage);
-                }
-            }  
+            _attackRange.Check();
         }
 
     }
