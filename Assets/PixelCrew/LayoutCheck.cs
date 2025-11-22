@@ -1,26 +1,29 @@
-using System;
 using UnityEngine;
 
-public class LayoutCheck : MonoBehaviour
+namespace PixelCrew
 {
-    [SerializeField] private LayerMask _groundLayer;
-    private Collider2D _collider;
-
-    public bool IsTouchingLayer;
+    public class LayoutCheck : MonoBehaviour
+    {
+        [SerializeField] private LayerMask _layer;
+        [SerializeField] private bool _isTouchingLayer;
+        private Collider2D _collider;
     
-    private void Awake()
-    {
-        _collider = GetComponent<Collider2D>();
-    }
+        public bool IsTouchingLayer => _isTouchingLayer;
+    
+        private void Awake()
+        {
+            _collider = GetComponent<Collider2D>();
+        }
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-       IsTouchingLayer = _collider.IsTouchingLayers(_groundLayer);
-    }
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            _isTouchingLayer = _collider.IsTouchingLayers(_layer);
+        }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        IsTouchingLayer = _collider.IsTouchingLayers(_groundLayer);
-    }
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            _isTouchingLayer = _collider.IsTouchingLayers(_layer);
+        }
 
+    }
 }

@@ -17,7 +17,6 @@ namespace  PixelCrew
         
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _ineractionRadius;
-        [SerializeField] private float _damageVelocity;
 
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;

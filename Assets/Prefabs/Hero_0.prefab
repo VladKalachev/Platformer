@@ -228,10 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d1dd9d197e744d4aa540fa36062eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _groundLayer:
+  _layer:
     serializedVersion: 2
     m_Bits: 8
-  IsTouchingLayer: 0
+  _isTouchingLayer: 0
 --- !u!58 &3055351063344868172
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 1008920331218552128}
   - component: {fileID: 6033778324494763633}
   - component: {fileID: 8774862184860602711}
+  - component: {fileID: 1156849858278382854}
   m_Layer: 0
   m_Name: Hero_0
   m_TagString: Player
@@ -306,12 +307,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4847177289715598918}
-  - {fileID: 5337769464368857475}
   - {fileID: 464968056759155826}
   - {fileID: 5774086453133028447}
   - {fileID: 6822490363588097680}
   - {fileID: 1187939762275362821}
   - {fileID: 8404953677520678187}
+  - {fileID: 5337769464368857475}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4429518657787184253
@@ -387,26 +388,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Hero
   _speed: 3
   _jumpSpeed: 12
-  _damageJumpSpeed: 15
-  _slamDownVelocity: 9
+  _damageVelocity: 0
+  _damage: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _ineractionRadius: 1
-  _damage: 1
+  _groundCheck: {fileID: 6113835660323044594}
+  _attackRange: {fileID: 1742372030985700081}
+  _particles: {fileID: 1156849858278382854}
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 64
-  _damageVelocity: 0
   _wallCheck: {fileID: 598990918145429496}
-  _groundCheckRadius: 0.3
-  _groundCheckPositionDelta: {x: 0, y: -0.12, z: 0}
+  _slamDownVelocity: 9
+  _ineractionRadius: 1
   _armed: {fileID: 9100000, guid: 0e0cccfab9ff1463bb16d3f044d43c98, type: 2}
   _disarmed: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
-  _attackRange: {fileID: 1742372030985700081}
-  _footStepParticles: {fileID: 1245851618123062462}
-  _jumpParticles: {fileID: 7096846733794106248}
-  _slamDownParticles: {fileID: 2798059786715718363}
   _hitParticles: {fileID: 5012118545859797627}
 --- !u!114 &2882775969375054121
 MonoBehaviour:
@@ -646,6 +643,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1156849858278382854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008346943987993646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6d7acff66944bdbc1ba222dd9766cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnListComponent
+  _spawners:
+  - Id: Run
+    Component: {fileID: 1245851618123062462}
+  - Id: Jump
+    Component: {fileID: 7096846733794106248}
+  - Id: SpamDown
+    Component: {fileID: 2798059786715718363}
 --- !u!1 &5213250919249621667
 GameObject:
   m_ObjectHideFlags: 0
@@ -5585,10 +5601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d1dd9d197e744d4aa540fa36062eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LayoutCheck
-  _groundLayer:
+  _layer:
     serializedVersion: 2
     m_Bits: 512
-  IsTouchingLayer: 1
+  _isTouchingLayer: 0
 --- !u!58 &719091940323104344
 CircleCollider2D:
   m_ObjectHideFlags: 0
