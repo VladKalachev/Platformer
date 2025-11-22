@@ -7,7 +7,7 @@ namespace PixelCrew.Creatures
     public class Creature : MonoBehaviour
     {
         [SerializeField] private float _speed;
-        [SerializeField] private float _jumpSpeed;
+        [SerializeField] protected float _jumpSpeed;
         [SerializeField] private float _damageVelocity;
         [SerializeField] private int _damage;
         [SerializeField] private LayerMask _groundLayer;
@@ -15,7 +15,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private LayoutCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
 
-        [SerializeField] private SpawnListComponent _particles;
+        [SerializeField] protected SpawnListComponent _particles;
         
         protected Rigidbody2D _rigidbody;
         protected Vector2 _direction;
@@ -83,7 +83,7 @@ namespace PixelCrew.Creatures
             return yVelocity;
         }
 
-        private float CalculateJumpVelocity(float yVelocity)
+        protected virtual float CalculateJumpVelocity(float yVelocity)
         {
             if (_isGrounded)
             {

@@ -94,24 +94,16 @@ namespace  PixelCrew
             return base.CalculateYVelocity();
         }
 
-        private float CalculateJumpVelocity(float yVelocity)
+        protected override float CalculateJumpVelocity(float yVelocity)
         {
-            var isFalling = _rigidbody.linearVelocity.y <= 0.001f;
-            
-            if (!isFalling) return yVelocity;
-
-            if (_isGrounded)
+            if (!_isGrounded && _allowDoubleJump)
             {
-                yVelocity += _jumpSpeed;
-                _jumpParticles.Spawn();
-            } else if (_allowDoubleJump)
-            {
-                yVelocity = _jumpSpeed;
-                _jumpParticles.Spawn();
+                _particles.Spawn("Jump");
                 _allowDoubleJump = false;
+                return _jumpSpeed;
             }
             
-            return yVelocity;
+            return base.CalculateJumpVelocity(yVelocity);
         }
 
         private bool IsGrounded()
