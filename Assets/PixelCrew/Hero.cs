@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using PixelCrew.Components;
+using PixelCrew.Creatures;
 using PixelCrew.Model;
 using PixelCrew.Utils;
 using UnityEditor;
@@ -9,74 +10,33 @@ using UnityEngine;
 
 namespace  PixelCrew
 {
-    public class Hero : MonoBehaviour
+    public class Hero : Creature
     {
-        [SerializeField] private float _speed;
-        [SerializeField] private float _jumpSpeed;
-        [SerializeField] private float _damageJumpSpeed;
         [SerializeField] private float _slamDownVelocity;
-        [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private float _ineractionRadius;
-        [SerializeField] private int _damage;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private float _damageVelocity;
         [SerializeField] private LayoutCheck _wallCheck;
-        
-        [SerializeField] private float _groundCheckRadius;
-        [SerializeField] private Vector3 _groundCheckPositionDelta;
 
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
         
-        [SerializeField] private CheckCircleOverlap _attackRange;
-        
         [Space] [Header("Particles")]
-        [SerializeField] private SpawnComponent _footStepParticles;
-        [SerializeField] private SpawnComponent _jumpParticles;
-        [SerializeField] private SpawnComponent _slamDownParticles;
         [SerializeField] private ParticleSystem _hitParticles;
         
-        private Collider2D[] _ineractionResult = new Collider2D[1];
-        private Rigidbody2D _rigidbody;
-        private Vector2 _direction;
-        private Animator _animator;
-        private bool _isGrounded;
+        private Collider2D[] _interactionResult = new Collider2D[1];
         private bool _allowDoubleJump;
-        private bool _isJumping;
         private bool _isOnWall;
         
-        private static readonly int IsGround =  Animator.StringToHash("is-ground");
-        private static readonly int IsVerticalVelocity =  Animator.StringToHash("vertical-velocity");
-        private static readonly int IsRunning =  Animator.StringToHash("is-running");
-        private static readonly int Hit =  Animator.StringToHash("hit");
-        private static readonly int AttackKey =  Animator.StringToHash("attack");
-
         private GameSession _session;
         private float _defaultGravityScale;
-        
-        private void Awake()
+
+        protected override void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
-            _animator =  GetComponent<Animator>();
+            base.Awake();
             _defaultGravityScale = _rigidbody.gravityScale;
         }
-
-        private void Update()
-        {
-            _isGrounded = IsGrounded();
-
-            if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
-            {
-                _isOnWall = true;
-                _rigidbody.gravityScale = 0;
-            }
-            else
-            {
-                _isOnWall = false;
-                _rigidbody.gravityScale = _defaultGravityScale;
-            }
-        }
-
+        
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
@@ -89,12 +49,23 @@ namespace  PixelCrew
         {
             _session.Data.Hp = currentHealth;
         }
-
-        public void SetDirection(Vector2 direction)
+        
+        
+        protected override void Update()
         {
-            _direction = direction;  
+            base.Update();
+            if (_wallCheck.IsTouchingLayer && _direction.x == transform.localScale.x)
+            {
+                _isOnWall = true;
+                _rigidbody.gravityScale = 0;
+            }
+            else
+            {
+                _isOnWall = false;
+                _rigidbody.gravityScale = _defaultGravityScale;
+            }
         }
-
+        
         private void UpdateSpriteDirection()
         {
             if (_direction.x > 0)
@@ -105,51 +76,22 @@ namespace  PixelCrew
                 transform.localScale = new Vector3(-1, 1, 1);
             }
         }
-
-        private void FixedUpdate()
+        
+        protected override float CalculateYVelocity()
         {
-            var xVelocity = _direction.x * _speed;
-            var yVelocity = CalculateYVelocity();
-            _rigidbody.linearVelocity = new Vector2(xVelocity, yVelocity);
-            
-            _animator.SetBool(IsGround, _isGrounded);
-            _animator.SetBool(IsRunning, _direction.x != 0);
-            _animator.SetFloat(IsVerticalVelocity, _rigidbody.linearVelocity.y);
-            
-            UpdateSpriteDirection();
-        }
-
-        private float CalculateYVelocity()
-        {
-            var yVelocity = _rigidbody.linearVelocity.y;
             var isJumpPressing = _direction.y > 0;
 
-            if (_isGrounded)
-            {
-                _allowDoubleJump = true;
-                _isJumping = false;
-            }
-
-            if (_isOnWall)
+            if (_isGrounded || _isOnWall)
             {
                 _allowDoubleJump = true;
             }
-            
-            if (isJumpPressing) 
+
+            if (!isJumpPressing && _isOnWall)
             {
-                _isJumping = true;
-                yVelocity = CalculateJumpVelocity(yVelocity);
-            }
-            else if (_isOnWall)
-            {
-                yVelocity = 0f;
-            }
-            else if (_rigidbody.linearVelocity.y > 0 && _isJumping)
-            {
-                yVelocity *= 0.5f;
+                return 0f;
             }
 
-            return yVelocity;
+            return base.CalculateYVelocity();
         }
 
         private float CalculateJumpVelocity(float yVelocity)
@@ -231,13 +173,13 @@ namespace  PixelCrew
             var size = Physics2D.OverlapCircleNonAlloc(
                 transform.position, 
                 _ineractionRadius, 
-                _ineractionResult, 
+                _interactionResult, 
                 _interactionLayer
                 );
 
             for (int i = 0; i < size; i++)
             {
-                var interactable = _ineractionResult[i].GetComponent<InteractableComponent>();
+                var interactable = _interactionResult[i].GetComponent<InteractableComponent>();
                 if (interactable != null)
                 {
                     interactable.Interact();
