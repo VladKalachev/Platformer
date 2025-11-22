@@ -6,20 +6,21 @@ namespace PixelCrew.Creatures
 {
     public class Creature : MonoBehaviour
     {
+        [Header("Params")]
         [SerializeField] private float _speed;
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] private float _damageVelocity;
         [SerializeField] private int _damage;
-        [SerializeField] private LayerMask _groundLayer;
         
+        [Header("Checkers")]
+        [SerializeField] protected LayerMask _groundLayer;
         [SerializeField] private LayoutCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
-
         [SerializeField] protected SpawnListComponent _particles;
         
         protected Rigidbody2D _rigidbody;
         protected Vector2 _direction;
-        private Animator _animator;
+        protected Animator _animator;
         protected bool _isGrounded;
         private bool _isJumping;
         
@@ -58,6 +59,18 @@ namespace PixelCrew.Creatures
             UpdateSpriteDirection();
         }
         
+        private void UpdateSpriteDirection()
+        {
+            if (_direction.x > 0)
+            {
+                transform.localScale = Vector3.one;
+            } else if (_direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+
+        
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = _rigidbody.linearVelocity.y;
@@ -93,5 +106,32 @@ namespace PixelCrew.Creatures
             
             return yVelocity;
         }
+        
+        public virtual void TakeDamage()
+        {
+            _isJumping = false;
+            _animator.SetTrigger(Hit);
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, _damageVelocity);
+
+        }
+        
+        public virtual void Attack()
+        {
+            _animator.SetTrigger(AttackKey);
+        }
+        
+        public void OnDoAttack()
+        {
+            var gos =  _attackRange.GetObjectsInRange();
+            foreach (var go in gos)
+            {
+                var hp = go.GetComponent<HealtComponent>();
+                if (hp != null && go.CompareTag("Enemy"))
+                {
+                    hp.ModifyHealth(-_damage);
+                }
+            }  
+        }
+
     }
 }
