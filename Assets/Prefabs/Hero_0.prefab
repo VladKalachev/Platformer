@@ -1,5 +1,83 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3120752373800660993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8415655106413807686}
+  - component: {fileID: 7205696857258093339}
+  - component: {fileID: 5301720646081791096}
+  m_Layer: 0
+  m_Name: InteractionCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8415655106413807686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120752373800660993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.285, y: -0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9134229494314148292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7205696857258093339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120752373800660993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0c66937db8483182baccd70c8376ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.CheckCircleOverlap
+  _radius: 0.6
+  _mask:
+    serializedVersion: 2
+    m_Bits: 0
+  _tags:
+  - Interactable
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5301720646081791096}
+        m_TargetAssemblyTypeName: PixelCrew.Components.DoInteractionComponent, Assembly-CSharp
+        m_MethodName: DoInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5301720646081791096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120752373800660993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042381f395454a28bf1446554a2ab9c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.DoInteractionComponent
 --- !u!1 &3216952504950307293
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1187939762275362821}
   - component: {fileID: 1742372030985700081}
+  - component: {fileID: 5547781729277129233}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
@@ -91,6 +170,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.CheckCircleOverlap
   _radius: 0.2
+  _mask:
+    serializedVersion: 2
+    m_Bits: 0
+  _tags:
+  - Enemy
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5547781729277129233}
+        m_TargetAssemblyTypeName: PixelCrew.Components.ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5547781729277129233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722914522639357659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d631128c1c8bf42638bbaddf45156d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ModifyHealthComponent
+  _hpDelta: -1
 --- !u!1 &4262835836506457376
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +425,7 @@ Transform:
   - {fileID: 1187939762275362821}
   - {fileID: 8404953677520678187}
   - {fileID: 5337769464368857475}
+  - {fileID: 8415655106413807686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4429518657787184253
@@ -396,9 +509,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 6113835660323044594}
   _attackRange: {fileID: 1742372030985700081}
   _particles: {fileID: 1156849858278382854}
-  _interactionLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  _interactionCheck: {fileID: 0}
   _wallCheck: {fileID: 598990918145429496}
   _slamDownVelocity: 9
   _ineractionRadius: 1

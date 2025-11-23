@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using PixelCrew.Utils;
 using UnityEditor;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace PixelCrew
     {
         [SerializeField] private float _radius = 1f;
         [SerializeField] private LayerMask _mask;
+        [SerializeField] private string[] _tags;
         [SerializeField] private OnOverlapEvent _onOverlap;
         private Collider2D[] _ineractionResult = new Collider2D[10];
         
@@ -29,7 +31,13 @@ namespace PixelCrew
 
             for (int i = 0; i < size; i++)
             {
-                _onOverlap?.Invoke(_ineractionResult[i].gameObject);
+                var overlapResult = _ineractionResult[i];
+                var isInTag = _tags.Any(tag => overlapResult.CompareTag(tag));
+
+                if (isInTag)
+                {
+                    _onOverlap?.Invoke(overlapResult.gameObject);     
+                }
             }
         }
 
