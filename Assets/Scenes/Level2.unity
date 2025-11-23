@@ -3814,9 +3814,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.29236948
-    width: 0.5456827
-    height: 0.49111447
+    y: 0.050077043
+    width: 1
+    height: 0.9000867
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5008,6 +5008,10 @@ PrefabInstance:
     - target: {fileID: 5578084584800129270, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
       propertyPath: m_Name
       value: WoodenDoor(Exit) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578084584800129270, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     - target: {fileID: 8360663991513280788, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
       propertyPath: m_LocalPosition.x

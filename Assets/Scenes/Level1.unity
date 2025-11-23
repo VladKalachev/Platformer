@@ -1243,7 +1243,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.47, y: -10.06, z: -10}
+  m_LocalPosition: {x: -1.08, y: 0.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11670,7 +11670,7 @@ Transform:
   m_GameObject: {fileID: 1100417416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.59248, y: -10.268451, z: -10}
+  m_LocalPosition: {x: 3.04248, y: -0.15845, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13139,6 +13139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Helm
       objectReference: {fileID: 0}
+    - target: {fileID: 4823425089294237889, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2725857689637190992, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
     m_RemovedGameObjects: []
@@ -13620,11 +13624,11 @@ PrefabInstance:
       objectReference: {fileID: 662111805}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.47
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.z

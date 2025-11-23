@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8415655106413807686}
   - component: {fileID: 7205696857258093339}
   - component: {fileID: 5301720646081791096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   _radius: 0.6
   _mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   _tags:
   - Interactable
   _onOverlap:
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6822490363588097680}
   - component: {fileID: 2798059786715718363}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SlamDownSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1187939762275362821}
   - component: {fileID: 1742372030985700081}
   - component: {fileID: 5547781729277129233}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   _radius: 0.2
   _mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1023
   _tags:
   - Enemy
   _onOverlap:
@@ -213,7 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464968056759155826}
   - component: {fileID: 1245851618123062462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FootStepsPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5774086453133028447}
   - component: {fileID: 7096846733794106248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: JumpSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 5337769464368857475}
   - component: {fileID: 6113835660323044594}
   - component: {fileID: 3055351063344868172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 6033778324494763633}
   - component: {fileID: 8774862184860602711}
   - component: {fileID: 1156849858278382854}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hero_0
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 6113835660323044594}
   _attackRange: {fileID: 1742372030985700081}
   _particles: {fileID: 1156849858278382854}
-  _interactionCheck: {fileID: 0}
+  _interactionCheck: {fileID: 7205696857258093339}
   _wallCheck: {fileID: 598990918145429496}
   _slamDownVelocity: 9
   _ineractionRadius: 1
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 4847177289715598918}
   - component: {fileID: 5012118545859797627}
   - component: {fileID: 8983721426149874223}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5678,7 +5678,7 @@ GameObject:
   - component: {fileID: 8404953677520678187}
   - component: {fileID: 598990918145429496}
   - component: {fileID: 719091940323104344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
