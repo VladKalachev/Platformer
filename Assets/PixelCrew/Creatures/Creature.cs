@@ -10,7 +10,6 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _speed;
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] protected float _damageVelocity;
-        [SerializeField] private int _damage;
         
         [Header("Checkers")]
         [SerializeField] protected LayerMask _groundLayer;
