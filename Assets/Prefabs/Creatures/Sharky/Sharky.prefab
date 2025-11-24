@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1187939762275362821}
   - component: {fileID: 1742372030985700081}
   - component: {fileID: 5547781729277129233}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464968056759155826}
   - component: {fileID: 1245851618123062462}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: FootStepsPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5774086453133028447}
   - component: {fileID: 7096846733794106248}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: JumpSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5337769464368857475}
   - component: {fileID: 6113835660323044594}
   - component: {fileID: 3055351063344868172}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,9 +272,9 @@ GameObject:
   - component: {fileID: 8774862184860602711}
   - component: {fileID: 1156849858278382854}
   - component: {fileID: 8273509662678205912}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sharky
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,12 +455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9996f847a5ff24b078bf9bfd04d0e967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.HealtComponent
-  _health: 30
+  _health: 5
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PixelCrew.Hero, Assembly-CSharp
+      - m_Target: {fileID: 8273509662678205912}
+        m_TargetAssemblyTypeName: PixelCrew.Creatures.Creature, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
@@ -476,34 +476,10 @@ MonoBehaviour:
       m_Calls: []
   _onDie:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PixelCrew.Components.ReloadLevelComponent, Assembly-CSharp
-        m_MethodName: Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onChange:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PixelCrew.Hero, Assembly-CSharp
-        m_MethodName: OnHealthChanged
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1156849858278382854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.Creature
   _speed: 2
   _jumpSpeed: 20
-  _damageVelocity: 8
+  _damageVelocity: 2
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
