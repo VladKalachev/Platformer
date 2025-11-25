@@ -586,7 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b873e8a80c04a8781ca8cbd82082517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.MobAI
-  _debug: 0
+  _vision: {fileID: 0}
+  _canAttack: {fileID: 0}
 --- !u!1 &8535433677853491004
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,4 +699,16 @@ MonoBehaviour:
   _tag: Player
   _action:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8805480007246778355}
+        m_TargetAssemblyTypeName: PixelCrew.Creatures.MobAI, Assembly-CSharp
+        m_MethodName: OnHeroInVision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
