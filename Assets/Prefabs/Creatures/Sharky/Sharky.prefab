@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3716153432259945771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3789756156212628040}
+  - component: {fileID: 304845829048512699}
+  m_Layer: 0
+  m_Name: MissSpanPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3789756156212628040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716153432259945771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.169, y: 0.312, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9134229494314148292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304845829048512699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716153432259945771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 3789756156212628040}
+  _prefab: {fileID: 1590669508923895862, guid: 0fd053b5d798a441a96e3118733fecb9, type: 3}
 --- !u!1 &3722914522639357659
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +271,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 5774086453133028447}
   _prefab: {fileID: 1590669508923895862, guid: 06f6124b5d3a5417d80b574d70f7b052, type: 3}
+--- !u!1 &4423055579405811933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2162351176023285045}
+  - component: {fileID: 3250053331371369183}
+  m_Layer: 0
+  m_Name: ExclamationSpanPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2162351176023285045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423055579405811933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.169, y: 0.312, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9134229494314148292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3250053331371369183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423055579405811933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 2162351176023285045}
+  _prefab: {fileID: 1590669508923895862, guid: 824e06a67362b4bc98457fdf61f58060, type: 3}
 --- !u!1 &4575490354725210258
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +441,8 @@ Transform:
   m_Children:
   - {fileID: 464968056759155826}
   - {fileID: 5774086453133028447}
+  - {fileID: 2162351176023285045}
+  - {fileID: 3789756156212628040}
   - {fileID: 1187939762275362821}
   - {fileID: 5337769464368857475}
   - {fileID: 8123087316040852198}
@@ -487,7 +581,7 @@ Animator:
   m_GameObject: {fileID: 5008346943987993646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
+  m_Controller: {fileID: 22100000, guid: b8476523061604989a7632bbea4a9a78, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -553,6 +647,10 @@ MonoBehaviour:
     Component: {fileID: 1245851618123062462}
   - Id: Jump
     Component: {fileID: 7096846733794106248}
+  - Id: Exclamation
+    Component: {fileID: 3250053331371369183}
+  - Id: Miss
+    Component: {fileID: 304845829048512699}
 --- !u!114 &8273509662678205912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882a553810b34c13bf883b657b046cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.Creature
+  _invertScale: 1
   _speed: 2
   _jumpSpeed: 20
   _damageVelocity: 2
@@ -589,6 +688,7 @@ MonoBehaviour:
   _vision: {fileID: 8735207512085741139}
   _canAttack: {fileID: 782160490381220202}
   _alarmDelay: 0.5
+  _attackCooldown: 0.5
 --- !u!1 &8535433677853491004
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1598482251951620341}
   - component: {fileID: 7309894912008819277}
   m_Layer: 0
-  m_Name: SlamDownParticle
+  m_Name: ExclamationParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,9 +81,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -314198425
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 934db38c3328d4c9db8cb7566d1bd1e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e8dcb4a82eed4efa8b3de4bac55029f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,13 +122,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _clips:
-  - _name: slamDown
+  - _name: run
     _sprites:
-    - {fileID: 21300000, guid: 934db38c3328d4c9db8cb7566d1bd1e0, type: 3}
-    - {fileID: 21300000, guid: 3c0e1efcd0c3f4117bd52423090a08ba, type: 3}
-    - {fileID: 21300000, guid: d81ad88e3dfee4aa19e86dab3d75d310, type: 3}
-    - {fileID: 21300000, guid: 00d88932eda5e4ead98f1dc01b8020c0, type: 3}
-    - {fileID: 21300000, guid: 08667faea76104ea8b48d97a63b36c87, type: 3}
+    - {fileID: 21300000, guid: 3e8dcb4a82eed4efa8b3de4bac55029f, type: 3}
+    - {fileID: 21300000, guid: 112f704031a6f4f01a2c802b150cef36, type: 3}
+    - {fileID: 21300000, guid: 2baad5b8bb03042da8772bd3c65ccd36, type: 3}
+    - {fileID: 21300000, guid: 6faf79f790de04a7399acb944279c394, type: 3}
+    - {fileID: 21300000, guid: 4671c5ec04fb64e27ba1134524363bf6, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:

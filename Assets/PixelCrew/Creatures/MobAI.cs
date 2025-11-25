@@ -11,6 +11,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private LayoutCheck _canAttack;
 
         [SerializeField] private float _alarmDelay = 0.5f;
+        [SerializeField] private float _attackCooldown = 1f;
         private Coroutine _current;
         private GameObject _target;
 
@@ -46,9 +47,27 @@ namespace PixelCrew.Creatures
         {
             while (_vision.IsTouchingLayer)
             {
-                SetDirectionToTarget();
+                if (_canAttack.IsTouchingLayer)
+                {
+                    StartState(Attack());
+                }
+                else
+                {
+                    SetDirectionToTarget();    
+                }
                 yield return null;
             }
+        }
+
+        private IEnumerator Attack()
+        {
+            while (_canAttack.IsTouchingLayer)
+            {
+                _creature.Attack();
+                yield return new WaitForSeconds(_attackCooldown);
+            }
+            
+            StartState(GoToHero());
         }
 
         private void SetDirectionToTarget()
