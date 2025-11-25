@@ -74,7 +74,7 @@ namespace PixelCrew.Creatures
         {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-            _creature.SetDirection(direction);
+            _creature.SetDirection(direction.normalized);
         }
 
         private IEnumerator Patrolling()

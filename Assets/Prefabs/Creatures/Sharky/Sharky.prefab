@@ -96,9 +96,9 @@ MonoBehaviour:
   _radius: 0.45
   _mask:
     serializedVersion: 2
-    m_Bits: 1023
+    m_Bits: 1024
   _tags:
-  - Enemy
+  - Player
   _onOverlap:
     m_PersistentCalls:
       m_Calls:
