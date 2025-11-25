@@ -15,10 +15,12 @@ namespace PixelCrew.Creatures
         private GameObject _target;
 
         private SpawnListComponent _particles;
+        private Creature _creature;
 
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
+            _creature =  GetComponent<Creature>();
         }
 
         private void Start()
@@ -42,7 +44,18 @@ namespace PixelCrew.Creatures
 
         private IEnumerator GoToHero()
         {
-            throw new NotImplementedException();
+            while (_vision.IsTouchingLayer)
+            {
+                SetDirectionToTarget();
+                yield return null;
+            }
+        }
+
+        private void SetDirectionToTarget()
+        {
+            var direction = _target.transform.position - transform.position;
+            direction.y = 0;
+            _creature.SetDirection(direction);
         }
 
         private IEnumerator Patrolling()

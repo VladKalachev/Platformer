@@ -586,8 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b873e8a80c04a8781ca8cbd82082517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.MobAI
-  _vision: {fileID: 0}
-  _canAttack: {fileID: 0}
+  _vision: {fileID: 8735207512085741139}
+  _canAttack: {fileID: 782160490381220202}
+  _alarmDelay: 0.5
 --- !u!1 &8535433677853491004
 GameObject:
   m_ObjectHideFlags: 0
