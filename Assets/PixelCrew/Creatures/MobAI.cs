@@ -15,13 +15,18 @@ namespace PixelCrew.Creatures
         private Coroutine _current;
         private GameObject _target;
 
+        private static readonly int IsDeadKey =  Animator.StringToHash("is-dead");
+        
         private SpawnListComponent _particles;
         private Creature _creature;
+        private Animator _animator;
+        private bool _isDead;
 
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
             _creature =  GetComponent<Creature>();
+            _animator = GetComponent<Animator>();
         }
 
         private void Start()
@@ -31,6 +36,8 @@ namespace PixelCrew.Creatures
 
         public void OnHeroInVision(GameObject go)
         {
+            if (_isDead)  return;
+            
             _target = go;
             
             StartState(AgroToHero());
@@ -90,6 +97,17 @@ namespace PixelCrew.Creatures
             }
             
             _current = StartCoroutine(coroutine);
+        }
+
+        public void OnDie()
+        {
+            _isDead = true;
+            _animator.SetBool(IsDeadKey, true);
+            
+            if (_current != null)
+            {
+                StopCoroutine(_current);
+            }
         }
     }
 }
