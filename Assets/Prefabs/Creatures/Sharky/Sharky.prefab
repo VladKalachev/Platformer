@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 1156849858278382854}
   - component: {fileID: 8273509662678205912}
   - component: {fileID: 8805480007246778355}
+  - component: {fileID: 6333882640626897406}
   m_Layer: 0
   m_Name: Sharky
   m_TagString: Enemy
@@ -701,6 +702,23 @@ MonoBehaviour:
   _canAttack: {fileID: 782160490381220202}
   _alarmDelay: 0.5
   _attackCooldown: 0.5
+  _missHeroCooldown: 0.5
+--- !u!114 &6333882640626897406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008346943987993646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad0c38c2d8d4ef195cf06016e676631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.PointPatrol
+  _points:
+  - {fileID: 0}
+  - {fileID: 0}
+  _treshold: 1
 --- !u!1 &8535433677853491004
 GameObject:
   m_ObjectHideFlags: 0
