@@ -4,6 +4,7 @@ using PixelCrew.Components;
 using PixelCrew.Creatures;
 using PixelCrew.Model;
 using PixelCrew.Utils;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -18,11 +19,14 @@ namespace  PixelCrew
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private float _ineractionRadius;
 
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
         
         [Space] [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
+        
+        private static readonly int ThrowKey = Animator.StringToHash("Throw");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -168,6 +172,20 @@ namespace  PixelCrew
         private void UpdateHeroWeapon()
         {
             Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+        }
+
+        public void OnDoThrow()
+        {
+            _particles.Spawn("Throw");
+        }
+
+        public void Throw()
+        {
+            // if (_throwCooldown.IsReady)
+            // {
+            //     Animator.SetTrigger(ThrowKey);
+            //     _throwCooldown.Reset();
+            // }
         }
     }
 };

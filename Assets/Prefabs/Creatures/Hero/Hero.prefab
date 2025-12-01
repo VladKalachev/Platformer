@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1235645754574651765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1643183348102677701}
+  - component: {fileID: 3084575191915749134}
+  m_Layer: 10
+  m_Name: SwordSlashPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1643183348102677701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235645754574651765}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.669, y: -0.185, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9134229494314148292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3084575191915749134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235645754574651765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 1643183348102677701}
+  _prefab: {fileID: 1590669508923895862, guid: 5bb2a6d647dae4103a389a21aeff8ef4, type: 3}
 --- !u!1 &3120752373800660993
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +472,7 @@ Transform:
   - {fileID: 8404953677520678187}
   - {fileID: 5337769464368857475}
   - {fileID: 8415655106413807686}
+  - {fileID: 1643183348102677701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4429518657787184253
@@ -477,7 +524,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 100
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 52d853c99a0a14aa1a9d498f467225a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eec2a1cc3693d46a1973bd8ead0f53ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -499,10 +546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453d863ebe411450889c05900aff6a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hero
+  _invertScale: 0
   _speed: 3
   _jumpSpeed: 12
   _damageVelocity: 0
-  _damage: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -773,6 +820,8 @@ MonoBehaviour:
     Component: {fileID: 7096846733794106248}
   - Id: SpamDown
     Component: {fileID: 2798059786715718363}
+  - Id: Slash
+    Component: {fileID: 3084575191915749134}
 --- !u!1 &5213250919249621667
 GameObject:
   m_ObjectHideFlags: 0
