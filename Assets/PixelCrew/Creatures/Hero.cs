@@ -26,7 +26,7 @@ namespace  PixelCrew
         [Space] [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
         
-        private static readonly int ThrowKey = Animator.StringToHash("Throw");
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -183,7 +183,7 @@ namespace  PixelCrew
         {
             // if (_throwCooldown.IsReady)
             // {
-            //     Animator.SetTrigger(ThrowKey);
+            Animator.SetTrigger(ThrowKey);
             //     _throwCooldown.Reset();
             // }
         }

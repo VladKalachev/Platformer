@@ -46,6 +46,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 1643183348102677701}
   _prefab: {fileID: 1590669508923895862, guid: 5bb2a6d647dae4103a389a21aeff8ef4, type: 3}
+--- !u!1 &2071558542584940828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5733742500012436507}
+  - component: {fileID: 3688221878773495377}
+  m_Layer: 10
+  m_Name: ThrowSwordSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5733742500012436507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071558542584940828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.339, y: -0.258, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9134229494314148292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3688221878773495377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071558542584940828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 5733742500012436507}
+  _prefab: {fileID: 1590669508923895862, guid: 4d877d3e3e9ad4299ba938a444a1011a, type: 3}
 --- !u!1 &3120752373800660993
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +518,7 @@ Transform:
   - {fileID: 8404953677520678187}
   - {fileID: 5337769464368857475}
   - {fileID: 8415655106413807686}
+  - {fileID: 5733742500012436507}
   - {fileID: 1643183348102677701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -588,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 8b63bed62c91f43b4833c3853d5858ab, type: 3}
+  m_Actions: {fileID: 0}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -649,6 +696,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3ae336af-3dd8-48d7-9328-213156ec7190
     m_ActionName: 'Hero/Attack[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2882775969375054121}
+        m_TargetAssemblyTypeName: PixelCrew.HeroInputReader, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: da10ca6b-9727-4302-9f5a-fc7e31ce87fe
+    m_ActionName: 'Hero/Throw[/Keyboard/shift]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -728,7 +791,7 @@ Animator:
   m_GameObject: {fileID: 5008346943987993646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0e0cccfab9ff1463bb16d3f044d43c98, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
