@@ -72,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 2071558542584940828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.339, y: -0.258, z: 0}
+  m_LocalPosition: {x: 0.339, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 5733742500012436507}
-  _prefab: {fileID: 1590669508923895862, guid: 4d877d3e3e9ad4299ba938a444a1011a, type: 3}
+  _prefab: {fileID: 1590669508923895862, guid: bfe7840e49bc1460588ab6bbf75dc553, type: 3}
 --- !u!1 &3120752373800660993
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: 8b63bed62c91f43b4833c3853d5858ab, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -885,6 +885,8 @@ MonoBehaviour:
     Component: {fileID: 2798059786715718363}
   - Id: Slash
     Component: {fileID: 3084575191915749134}
+  - Id: Throw
+    Component: {fileID: 3688221878773495377}
 --- !u!1 &5213250919249621667
 GameObject:
   m_ObjectHideFlags: 0
