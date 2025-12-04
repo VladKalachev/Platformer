@@ -49,6 +49,9 @@ TagManager:
   - name: Decor
     uniqueID: 3932675635
     locked: 0
+  - name: TileMap
+    uniqueID: 2877446301
+    locked: 0
   - name: Level
     uniqueID: 3980768871
     locked: 0
