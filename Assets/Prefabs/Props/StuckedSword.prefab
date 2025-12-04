@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8323382139475794373}
   - component: {fileID: 235010129186628220}
   m_Layer: 0
-  m_Name: SwordProjectile
+  m_Name: StuckedSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,4 +343,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 2445830123581092206}
-  _prefab: {fileID: 1590669508923895862, guid: a61064a9b92464865ad7c46ddf601606, type: 3}
+  _prefab: {fileID: 0}
