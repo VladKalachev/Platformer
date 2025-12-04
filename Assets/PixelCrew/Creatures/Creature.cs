@@ -55,10 +55,10 @@ namespace PixelCrew.Creatures
             Animator.SetBool(IsRunning, Direction.x != 0);
             Animator.SetFloat(IsVerticalVelocity, Rigidbody.linearVelocity.y);
             
-            UpdateSpriteDirection();
+            UpdateSpriteDirection(Direction);
         }
         
-        private void UpdateSpriteDirection()
+        public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplier = _invertScale ? -1 : 1;
             
