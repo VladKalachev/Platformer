@@ -14,10 +14,8 @@ GameObject:
   - component: {fileID: 7309894912008819277}
   - component: {fileID: 424716515634025438}
   - component: {fileID: 3453775193033598170}
-  - component: {fileID: 9060436523940772670}
-  - component: {fileID: 4514599856918033931}
-  - component: {fileID: 8323382139475794373}
   - component: {fileID: 235010129186628220}
+  - component: {fileID: 6341333190080716434}
   m_Layer: 0
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -37,8 +35,7 @@ Transform:
   m_LocalPosition: {x: -0.4, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2445830123581092206}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2172242210952260794
@@ -90,7 +87,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 7a44ada57212b4cd18c62e15b357e282, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 525fd55e93dcf440b97bd259d7e18927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,13 +126,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _clips:
-  - _name: spinning
+  - _name: idle
     _sprites:
-    - {fileID: 21300000, guid: 7a44ada57212b4cd18c62e15b357e282, type: 3}
-    - {fileID: 21300000, guid: 41871a80dafbf40a6bc36cdd8c683fb8, type: 3}
-    - {fileID: 21300000, guid: f448ed64064344cde87224fba3a9cbc2, type: 3}
-    - {fileID: 21300000, guid: d1e44e4c1923642d49b93412a171755a, type: 3}
-    _loop: 1
+    - {fileID: 21300000, guid: 525fd55e93dcf440b97bd259d7e18927, type: 3}
+    - {fileID: 21300000, guid: c61db814703854660900efff56490553, type: 3}
+    - {fileID: 21300000, guid: 3e125c7a6c4a64d63b11eeba629aa366, type: 3}
+    - {fileID: 21300000, guid: 4251218205c0f4cc3b9038d6582788e3, type: 3}
+    _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
@@ -216,20 +213,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3125
---- !u!114 &9060436523940772670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590669508923895862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20b22584b9e4c46877f6c41eda7b286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.Weapons.Projectile
-  _speed: 0.1
---- !u!114 &4514599856918033931
+--- !u!114 &235010129186628220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,13 +225,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694e00e2e09044535b1ce9c3a90f0b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.EnterTriggerComponent
-  _tag: Enemy
+  _tag: Player
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8323382139475794373}
-        m_TargetAssemblyTypeName: PixelCrew.Components.ModifyHealthComponent, Assembly-CSharp
-        m_MethodName: Apply
+      - m_Target: {fileID: 6341333190080716434}
+        m_TargetAssemblyTypeName: PixelCrew.Components.ArmHeroComponent, Assembly-CSharp
+        m_MethodName: ArmHero
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -269,7 +253,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8323382139475794373
+--- !u!114 &6341333190080716434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,69 +262,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1590669508923895862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d631128c1c8bf42638bbaddf45156d06, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e2901a118fe4883afcd4d00b071746c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ModifyHealthComponent
-  _hpDelta: -1
---- !u!114 &235010129186628220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590669508923895862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694e00e2e09044535b1ce9c3a90f0b96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.EnterTriggerComponent
-  _tag: 
-  _action:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &5106705145858029767
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2445830123581092206}
-  - component: {fileID: 8456248297036186033}
-  m_Layer: 0
-  m_Name: StuckedSwordSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2445830123581092206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106705145858029767}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7231344530706008394}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8456248297036186033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5106705145858029767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
-  _target: {fileID: 2445830123581092206}
-  _prefab: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ArmHeroComponent

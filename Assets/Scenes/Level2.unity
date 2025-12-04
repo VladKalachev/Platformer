@@ -256,6 +256,10 @@ PrefabInstance:
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: 8b63bed62c91f43b4833c3853d5858ab, type: 3}
+    - target: {fileID: 3688221878773495377, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 1395789111}
     - target: {fileID: 5008346943987993646, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Name
       value: Hero_0
@@ -3949,9 +3953,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050151978
+    y: 0.050181817
     width: 1
-    height: 0.900171
+    height: 0.9
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -3987,6 +3991,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1395789111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5733742500012436507, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+  m_PrefabInstance: {fileID: 386701344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1458546669
 GameObject:
   m_ObjectHideFlags: 0
