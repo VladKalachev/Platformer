@@ -123,6 +123,8 @@ namespace PixelCrew.Creatures
         {
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
+          
+            _creature.SetDirection(Vector2.zero);
             
             if (_current != null)
             {
