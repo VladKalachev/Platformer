@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 3789756156212628040}
   _prefab: {fileID: 1590669508923895862, guid: 0fd053b5d798a441a96e3118733fecb9, type: 3}
+  _invertXScale: 0
 --- !u!1 &3722914522639357659
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 464968056759155826}
   _prefab: {fileID: 1590669508923895862, guid: cfdcfe9de54a2485383d46db9743b2ff, type: 3}
+  _invertXScale: 1
 --- !u!1 &4384106739756198366
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 5774086453133028447}
   _prefab: {fileID: 1590669508923895862, guid: 06f6124b5d3a5417d80b574d70f7b052, type: 3}
+  _invertXScale: 0
 --- !u!1 &4423055579405811933
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 2162351176023285045}
   _prefab: {fileID: 1590669508923895862, guid: 824e06a67362b4bc98457fdf61f58060, type: 3}
+  _invertXScale: 0
 --- !u!1 &4575490354725210258
 GameObject:
   m_ObjectHideFlags: 0
