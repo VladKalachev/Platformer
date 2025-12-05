@@ -10,6 +10,15 @@ namespace PixelCrew.Components
         [SerializeField] private int _count;
         [SerializeField] private DropData[] _drop;
         [SerializeField] private DropEvent _onDropCalculated;
+        [SerializeField] private bool _spawnOnEnable;
+
+        private void OnEnable()
+        {
+            if (_spawnOnEnable)
+            {
+                CalculateDrop();
+            }
+        }
 
         [ContextMenu("CalculateDrop")]
         public void CalculateDrop()

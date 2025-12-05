@@ -16,6 +16,8 @@ namespace PixelCrew.Components
             var scale = _target.lossyScale;
             scale.x *= _invertXScale ? -1 : 1; 
             instantiate.transform.localScale = scale;
+            
+            instantiate.SetActive(true);
         }
     }
 }

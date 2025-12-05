@@ -15,7 +15,6 @@ namespace PixelCrew
         
         [SerializeField] private float _waitTime = 0.1f;
         [SerializeField] private float _speed = 6;
-        [SerializeField] private float _itemPerBurst = 2;
         
         private Coroutine _routine;
         
@@ -30,12 +29,7 @@ namespace PixelCrew
         {
             for (int i = 0; i < particles.Length; i++)
             {
-                for (var j = 0; j < _itemPerBurst && i < particles.Length; j++)
-                {
-                    Spawn(particles[i]);
-                    i++;
-                }
-
+                Spawn(particles[i]);
                 yield return new WaitForSeconds(_waitTime);
             }
         }

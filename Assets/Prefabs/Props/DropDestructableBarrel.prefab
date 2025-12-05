@@ -1,5 +1,134 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1637707805340538308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869998351102300096}
+  - component: {fileID: 8975331612020603372}
+  m_Layer: 0
+  m_Name: DropSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869998351102300096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637707805340538308}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8250691841517793499}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8975331612020603372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637707805340538308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
+  _target: {fileID: 1869998351102300096}
+  _prefab: {fileID: 7839323289747688441}
+  _invertXScale: 0
+--- !u!1 &7839323289747688441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167679240356238493}
+  - component: {fileID: 2814482472619462590}
+  - component: {fileID: 1476153239082441570}
+  m_Layer: 0
+  m_Name: Drop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167679240356238493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839323289747688441}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: -0.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8250691841517793499}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2814482472619462590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839323289747688441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a51a898154647f0a8b064bdee7afca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ProbabilityDropComponent
+  _count: 10
+  _drop:
+  - Drop: {fileID: 783950196315443757, guid: bf1d2709c5dd449758582eb87cc89aa6, type: 3}
+    Probability: 80
+  - Drop: {fileID: 6805271275668539533, guid: c1b36907d9a7345649794818a343ded2, type: 3}
+    Probability: 20
+  _onDropCalculated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1476153239082441570}
+        m_TargetAssemblyTypeName: PixelCrew.RandomSpawner, Assembly-CSharp
+        m_MethodName: StartDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1476153239082441570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839323289747688441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4231d06fddb47aeb1f9dbd2677920d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.RandomSpawner
+  _sectorAngle: 60
+  _sectorRotation: 0
+  _waitTime: 0.1
+  _speed: 6
 --- !u!1 &8261348885497491165
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,6 +145,7 @@ GameObject:
   - component: {fileID: 1491169118795381402}
   - component: {fileID: 478185569605798467}
   - component: {fileID: 7793915055425583879}
+  - component: {fileID: 4381472173634314583}
   m_Layer: 0
   m_Name: DropDestructableBarrel
   m_TagString: Enemy
@@ -35,7 +165,9 @@ Transform:
   m_LocalPosition: {x: -1.09, y: -0.6063319, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1167679240356238493}
+  - {fileID: 1869998351102300096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5705174695849449046
@@ -156,9 +288,9 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7793915055425583879}
-          m_TargetAssemblyTypeName: PixelCrew.Components.SpawnComponent, Assembly-CSharp
-          m_MethodName: Spawn
+        - m_Target: {fileID: 4381472173634314583}
+          m_TargetAssemblyTypeName: PixelCrew.Components.SpawnListComponent, Assembly-CSharp
+          m_MethodName: SpawnAll
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -331,3 +463,20 @@ MonoBehaviour:
   _target: {fileID: 8250691841517793499}
   _prefab: {fileID: 4837283524682736549, guid: 6dac0c88319a04ddea2bb5bc93fc75fc, type: 3}
   _invertXScale: 0
+--- !u!114 &4381472173634314583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261348885497491165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6d7acff66944bdbc1ba222dd9766cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnListComponent
+  _spawners:
+  - Id: 
+    Component: {fileID: 7793915055425583879}
+  - Id: 
+    Component: {fileID: 8975331612020603372}
