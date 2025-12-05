@@ -18,6 +18,7 @@ namespace PixelCrew.Model
             }
             else
             {
+                Save();
                 DontDestroyOnLoad(this);
             }
         }

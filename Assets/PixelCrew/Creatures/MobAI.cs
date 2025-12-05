@@ -13,7 +13,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _missHeroCooldown = 0.5f;
-        private Coroutine _current;
+        private IEnumerator _current;
         private GameObject _target;
 
         private static readonly int IsDeadKey =  Animator.StringToHash("is-dead");
@@ -115,8 +115,9 @@ namespace PixelCrew.Creatures
             {
                 StopCoroutine(_current);
             }
-            
-            _current = StartCoroutine(coroutine);
+
+            _current = coroutine;
+            StartCoroutine(coroutine);
         }
 
         public void OnDie()
