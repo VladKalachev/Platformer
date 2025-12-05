@@ -11,6 +11,7 @@ namespace PixelCrew.Components
         [SerializeField] private DropData[] _drop;
         [SerializeField] private DropEvent _onDropCalculated;
 
+        [ContextMenu("CalculateDrop")]
         public void CalculateDrop()
         {
          var itemsToDrop = new GameObject[_count];
