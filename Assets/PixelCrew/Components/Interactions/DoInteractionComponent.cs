@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Interactions
 {
     public class DoInteractionComponent: MonoBehaviour
     {
