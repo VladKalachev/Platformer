@@ -1,16 +1,12 @@
-using System;
 using System.Collections;
-using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.Health;
-using PixelCrew.Creatures;
 using PixelCrew.Model;
 using PixelCrew.Utils;
-using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 
-namespace  PixelCrew
+namespace PixelCrew.Creatures.Hero
 {
     public class Hero : Creature
     {
@@ -18,8 +14,6 @@ namespace  PixelCrew
         [SerializeField] private LayoutCheck _wallCheck;
         
         [SerializeField] private float _slamDownVelocity;
-        [SerializeField] private float _ineractionRadius;
-
         [SerializeField] private Cooldown  _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
@@ -28,6 +22,7 @@ namespace  PixelCrew
         [SerializeField] private ParticleSystem _hitParticles;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
+        private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -58,7 +53,8 @@ namespace  PixelCrew
         protected override void Update()
         {
             base.Update();
-            if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
+            var moveToSameDirection = Direction.x * transform.localScale.x > 0;
+            if (_wallCheck.IsTouchingLayer && moveToSameDirection)
             {
                 _isOnWall = true;
                 Rigidbody.gravityScale = 0;
@@ -68,6 +64,8 @@ namespace  PixelCrew
                 _isOnWall = false;
                 Rigidbody.gravityScale = _defaultGravityScale;
             }
+            
+            Animator.SetBool(IsOnWallKey, _isOnWall);
         }
         
         protected override float CalculateYVelocity()
@@ -89,7 +87,7 @@ namespace  PixelCrew
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
                 _particles.Spawn("Jump");
                 _allowDoubleJump = false;

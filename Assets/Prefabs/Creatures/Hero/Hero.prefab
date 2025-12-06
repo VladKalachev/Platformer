@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 1643183348102677701}
   _prefab: {fileID: 1590669508923895862, guid: 5bb2a6d647dae4103a389a21aeff8ef4, type: 3}
+  _invertXScale: 0
 --- !u!1 &2071558542584940828
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 2071558542584940828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0.45, y: 0.089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 5733742500012436507}
   _prefab: {fileID: 1590669508923895862, guid: bfe7840e49bc1460588ab6bbf75dc553, type: 3}
+  _invertXScale: 0
 --- !u!1 &3120752373800660993
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 6822490363588097680}
   _prefab: {fileID: 1590669508923895862, guid: 4d877d3e3e9ad4299ba938a444a1011a, type: 3}
+  _invertXScale: 0
 --- !u!1 &3722914522639357659
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 464968056759155826}
   _prefab: {fileID: 1590669508923895862, guid: cfdcfe9de54a2485383d46db9743b2ff, type: 3}
+  _invertXScale: 0
 --- !u!1 &4384106739756198366
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 5774086453133028447}
   _prefab: {fileID: 1590669508923895862, guid: 06f6124b5d3a5417d80b574d70f7b052, type: 3}
+  _invertXScale: 0
 --- !u!1 &4575490354725210258
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +573,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -314198425
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: eec2a1cc3693d46a1973bd8ead0f53ef, type: 3}
@@ -596,7 +601,7 @@ MonoBehaviour:
   _invertScale: 0
   _speed: 3
   _jumpSpeed: 12
-  _damageVelocity: 0
+  _damageVelocity: 20
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -607,6 +612,8 @@ MonoBehaviour:
   _wallCheck: {fileID: 598990918145429496}
   _slamDownVelocity: 9
   _ineractionRadius: 1
+  _throwCooldown:
+    _value: 1
   _armed: {fileID: 9100000, guid: 0e0cccfab9ff1463bb16d3f044d43c98, type: 2}
   _disarmed: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
   _hitParticles: {fileID: 5012118545859797627}
@@ -791,7 +798,7 @@ Animator:
   m_GameObject: {fileID: 5008346943987993646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0e0cccfab9ff1463bb16d3f044d43c98, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5747,7 +5754,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -314198425
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_MaskInteraction: 0
   m_RenderMode: 0
@@ -5808,7 +5815,7 @@ Transform:
   m_GameObject: {fileID: 6380198530561433016}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: 0}
+  m_LocalPosition: {x: 0.185, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5860,7 +5867,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

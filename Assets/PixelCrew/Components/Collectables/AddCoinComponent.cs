@@ -1,3 +1,4 @@
+using PixelCrew.Creatures.Hero;
 using UnityEngine;
 
 namespace PixelCrew.Components.Collectables
