@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Components.Collectables
 {
     public class AddCoinComponent: MonoBehaviour
     {

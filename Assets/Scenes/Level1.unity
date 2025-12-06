@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.GameSession
   _data:
     Coins: 0
-    Hp: 5
+    Hp: 2
     IsArmed: 0
 --- !u!4 &548485629
 Transform:
@@ -11673,7 +11673,7 @@ Transform:
   m_GameObject: {fileID: 1100417416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.33752, y: -8.20845, z: -10}
+  m_LocalPosition: {x: -6.33752, y: -8.29845, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13639,7 +13639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -8.09
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.z

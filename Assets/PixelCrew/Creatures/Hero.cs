@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using PixelCrew.Components;
+using PixelCrew.Components.ColliderBased;
 using PixelCrew.Creatures;
 using PixelCrew.Model;
 using PixelCrew.Utils;

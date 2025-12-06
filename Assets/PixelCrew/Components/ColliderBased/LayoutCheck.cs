@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PixelCrew
+namespace PixelCrew.Components.ColliderBased
 {
     public class LayoutCheck : MonoBehaviour
     {
