@@ -87,7 +87,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -314198425
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 7a44ada57212b4cd18c62e15b357e282, type: 3}
@@ -228,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20b22584b9e4c46877f6c41eda7b286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Creatures.Weapons.Projectile
-  _speed: 0.1
+  _speed: 10
+  _invertX: 0
 --- !u!114 &4514599856918033931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,3 +375,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
   _target: {fileID: 2445830123581092206}
   _prefab: {fileID: 1590669508923895862, guid: a61064a9b92464865ad7c46ddf601606, type: 3}
+  _invertXScale: 0
