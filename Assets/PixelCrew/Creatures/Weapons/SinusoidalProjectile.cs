@@ -13,6 +13,7 @@ namespace PixelCrew.Creatures.Weapons
         protected override void Start()
         {
             base.Start();
+            _originalY = Rigidbody.position.y;
         }
 
         private void FixedUpdate()
