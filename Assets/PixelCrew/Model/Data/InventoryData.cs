@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using PixelCrew.Model.Definitions;
 using UnityEngine;
 
-namespace PixelCrew.Model
+namespace PixelCrew.Model.Data
 {
     [Serializable]
     public class InventoryData
@@ -12,6 +13,9 @@ namespace PixelCrew.Model
         public void Add(string id, int value)
         {
             if (value <= 0) return;
+            
+            var itemDef = DefsFacade.I.Items.Get(id);
+            if (itemDef.IsVoid) return;
             
             var item = GetItem(id);
             if (item == null)
@@ -25,6 +29,9 @@ namespace PixelCrew.Model
 
         public void Remove(string id, int value)
         {
+            var itemDef = DefsFacade.I.Items.Get(id);
+            if (itemDef.IsVoid) return;
+            
             var item = GetItem(id);
             if (item == null) return;
             

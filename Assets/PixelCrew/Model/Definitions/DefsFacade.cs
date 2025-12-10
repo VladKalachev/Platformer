@@ -7,6 +7,8 @@ namespace PixelCrew.Model.Definitions
     {
         [SerializeField] private InventoryItemDef _items;
         
+        public InventoryItemDef Items => _items;
+        
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadingDefs() : _instance;
 

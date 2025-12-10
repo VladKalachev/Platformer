@@ -1,3 +1,4 @@
+using PixelCrew.Model.Data;
 using Unity.VisualScripting;
 using UnityEngine;
 
