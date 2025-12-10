@@ -44,9 +44,8 @@ namespace PixelCrew.Model
                 {
                     return itemData;
                 }
-
-                return null;
             }
+            return null;
         }
 
         [Serializable]
