@@ -6,6 +6,8 @@ namespace PixelCrew.Model
     [Serializable]
     public class PlayerData
     {
+        [SerializeField] private InventoryData _inventory;
+        
         public int Coins;
         public int Hp;
         public bool IsArmed;
