@@ -66,5 +66,18 @@ namespace PixelCrew.Model.Data
                 Id = id;
             }
         }
+
+        public int Count(string id)
+        {
+            var count = 0;
+            foreach (var item in _inventory)
+            {
+                if (item.Id == id)
+                {
+                    count += item.Value;
+                }
+            }
+            return count;
+        }
     }
 }

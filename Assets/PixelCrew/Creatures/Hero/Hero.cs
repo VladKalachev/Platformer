@@ -29,6 +29,9 @@ namespace PixelCrew.Creatures.Hero
         
         private GameSession _session;
         private float _defaultGravityScale;
+        
+        private int CoinsCount => _session.Data.Inventory.Count("Coin");
+        private int SwordCount => _session.Data.Inventory.Count("Sword");
 
         protected override void Awake()
         {
@@ -96,17 +99,17 @@ namespace PixelCrew.Creatures.Hero
             
             return base.CalculateJumpVelocity(yVelocity);
         }
-        
-        public void AddCoins(int coins)
+
+        public void AddInInventory(string id, int value)
         {
-            _session.Data.Coins += coins;
-            Debug.Log($"{coins} coins added. total coins: {_session.Data.Coins}");
+            
         }
+        
 
         public override void TakeDamage()
         {
             base.TakeDamage();
-            if (_session.Data.Coins > 0)
+            if (CoinsCount > 0)
             {
                 SpawnCoins();
             }
@@ -114,8 +117,8 @@ namespace PixelCrew.Creatures.Hero
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
-            _session.Data.Coins -= numCoinsToDispose;
+            var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
+            _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
             var burst = _hitParticles.emission.GetBurst(0);
             burst.count = numCoinsToDispose;
@@ -157,20 +160,14 @@ namespace PixelCrew.Creatures.Hero
 
         public override void Attack()
         {
-            if (!_session.Data.IsArmed) return;
+            if (SwordCount <= 0) return;
             
             base.Attack();
         }
 
-        public void ArmHero()
-        {
-            _session.Data.IsArmed = true;
-            UpdateHeroWeapon();
-        }
-
         private void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed;
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
         }
 
         public void OnDoThrow()
