@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.Health;
@@ -45,8 +46,21 @@ namespace PixelCrew.Creatures.Hero
             _session = FindObjectOfType<GameSession>();
             var health = GetComponent<HealtComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
+            _session.Data.Inventory.OnChanged += AnotherHandler;
+            
             health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
+        }
+
+        private void OnDestroy()
+        {
+            _session.Data.Inventory.OnChanged -= OnInventoryChanged;
+            _session.Data.Inventory.OnChanged -= AnotherHandler;
+        }
+
+        private void AnotherHandler(string id, int value)
+        {
+            Debug.Log($"Inventory changed: {id}: {value}");
         }
 
         private void OnInventoryChanged(string id, int value)
