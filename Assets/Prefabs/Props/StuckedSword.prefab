@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 424716515634025438}
   - component: {fileID: 3453775193033598170}
   - component: {fileID: 235010129186628220}
-  - component: {fileID: 6341333190080716434}
+  - component: {fileID: 8057282358620154348}
   m_Layer: 0
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -232,9 +232,10 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6341333190080716434}
-        m_TargetAssemblyTypeName: PixelCrew.Components.ArmHeroComponent, Assembly-CSharp
-        m_MethodName: ArmHero
+      - m_Target: {fileID: 8057282358620154348}
+        m_TargetAssemblyTypeName: PixelCrew.Components.Collectables.InventoryAddComponent,
+          Assembly-CSharp
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,7 +257,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6341333190080716434
+--- !u!114 &8057282358620154348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,6 +266,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1590669508923895862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e2901a118fe4883afcd4d00b071746c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ArmHeroComponent
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
+  _id: Sword
+  _count: 1

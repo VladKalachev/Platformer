@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7642504319898670794, guid: bf1d2709c5dd449758582eb87cc89aa6, type: 3}
+      propertyPath: _count
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8773962605865973270, guid: bf1d2709c5dd449758582eb87cc89aa6, type: 3}
       propertyPath: _clips.Array.data[0]._sprites.Array.size
       value: 4

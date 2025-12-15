@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e47dffc04444fb89f79ef6950597b7a, type: 3}
   m_Name: DefsFacade
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.DefsFacade
-  _items: {fileID: 0}
+  _items: {fileID: 11400000, guid: c4ddccd3895af4b03aa69f1ecde0c0b8, type: 2}

@@ -102,7 +102,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void AddInInventory(string id, int value)
         {
-            
+            _session.Data.Inventory.Add(id, value);
         }
         
 

@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 5169706766245430149}
   - component: {fileID: 647608052948538600}
   - component: {fileID: 8773962605865973270}
-  - component: {fileID: 6079648365693585170}
   - component: {fileID: 1183529987891981993}
   - component: {fileID: 3090348832230171051}
+  - component: {fileID: 8381604938611862513}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -299,10 +299,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6079648365693585170}
-        m_TargetAssemblyTypeName: PixelCrew.Components.AddCoinComponent, Assembly-CSharp
+      - m_Target: {fileID: 8381604938611862513}
+        m_TargetAssemblyTypeName: PixelCrew.Components.Collectables.InventoryAddComponent,
+          Assembly-CSharp
         m_MethodName: Add
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -376,19 +377,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &6079648365693585170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783950196315443757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
-  _numCoins: 1
 --- !u!50 &1183529987891981993
 Rigidbody2D:
   serializedVersion: 5
@@ -431,3 +419,17 @@ MonoBehaviour:
   _frequency: 6
   _amplitude: 0.1
   _randomize: 1
+--- !u!114 &8381604938611862513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783950196315443757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
+  _id: Coin
+  _count: 1
