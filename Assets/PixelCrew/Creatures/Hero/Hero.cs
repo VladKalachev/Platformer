@@ -2,6 +2,7 @@ using System.Collections;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
+using PixelCrew.Model.Data;
 using PixelCrew.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -43,8 +44,17 @@ namespace PixelCrew.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
             var health = GetComponent<HealtComponent>();
+            _session.Data.Inventory.OnChanged += OnInventoryChanged;
             health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == "Sword")
+            {
+                UpdateHeroWeapon();
+            }
         }
 
         public void OnHealthChanged(int currentHealth)

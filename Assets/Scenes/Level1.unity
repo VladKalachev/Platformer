@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &75921087 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 689477035}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!1 &147748803
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +320,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 342269169}
+      objectReference: {fileID: 548859330}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.16
@@ -385,17 +378,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
---- !u!114 &342269169 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 342269168}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!1 &343331057
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,17 +643,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &452930267 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 508714537}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!1 &454180167
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +840,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 497249826}
+      objectReference: {fileID: 497249828}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.09
@@ -1023,17 +998,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
---- !u!114 &497249826 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 497249825}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!114 &497249827 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 647608052948538600, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
@@ -1045,6 +1009,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cc7a0466b0d4d1bbe0d79c0e00514e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.DestroyObjectComponent
+--- !u!114 &497249828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 497249825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1001 &508714537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,7 +1035,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 452930267}
+      objectReference: {fileID: 1395955197}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32
@@ -1211,9 +1190,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050181817
+    y: 0.04945598
     width: 1
-    height: 0.9
+    height: 0.90022254
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1243,7 +1222,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.948612, y: -6.7206197, z: -10}
+  m_LocalPosition: {x: -10.212328, y: -6.8655796, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1320,7 +1299,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 523757165}
+      objectReference: {fileID: 1517332451}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.1
@@ -1370,17 +1353,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
---- !u!114 &523757165 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 523757164}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!1 &548485627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,9 +1383,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.GameSession
   _data:
-    Coins: 0
+    _inventory:
+      _inventory: []
     Hp: 2
-    IsArmed: 0
 --- !u!4 &548485629
 Transform:
   m_ObjectHideFlags: 0
@@ -1429,6 +1401,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &548859330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 342269168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1 &611366797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4823425089294237889, guid: 6de499645b7624a1392b65350a4acfc8, type: 3}
@@ -1533,7 +1516,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 892173917}
+      objectReference: {fileID: 2097186582}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.33
@@ -1825,7 +1812,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 75921087}
+      objectReference: {fileID: 807472132}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.18
@@ -1944,17 +1935,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c164eb00d088443ca6c1156c5380e46, type: 3}
---- !u!114 &705403558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 1904896278}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!1 &754174734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2041,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1430736176}
+      objectReference: {fileID: 1734946923}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.34
@@ -6661,6 +6645,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &807472132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 689477035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1 &877907669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,17 +6687,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &892173917 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 624371127}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
 --- !u!1 &893829265
 GameObject:
   m_ObjectHideFlags: 0
@@ -11758,6 +11742,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
   m_PrefabInstance: {fileID: 7016733643823747722}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1395955197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 508714537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1 &1419222710
 GameObject:
   m_ObjectHideFlags: 0
@@ -11849,17 +11844,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1430736176 stripped
+--- !u!114 &1517332451 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079648365693585170, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
-  m_PrefabInstance: {fileID: 768758951}
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 523757164}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e47cc89a7944d09d9bb764f0010d23, type: 3}
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.AddCoinComponent
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1 &1579602467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12177,6 +12172,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cc7a0466b0d4d1bbe0d79c0e00514e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.DestroyObjectComponent
+--- !u!114 &1734946923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 768758951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
+--- !u!114 &1747239056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 1904896278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1001 &1833297827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12249,7 +12266,11 @@ PrefabInstance:
     - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 705403558}
+      objectReference: {fileID: 1747239056}
+    - target: {fileID: 5169706766245430149, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Add
+      objectReference: {fileID: 0}
     - target: {fileID: 6210926798559418542, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.18
@@ -12801,6 +12822,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd89c3e127e364064b0c9c73ec90c0ed, type: 3}
+--- !u!114 &2097186582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8381604938611862513, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
+  m_PrefabInstance: {fileID: 624371127}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1132c15029994b9fa2cd0b1a35619f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Collectables.InventoryAddComponent
 --- !u!1 &2135005163
 GameObject:
   m_ObjectHideFlags: 0

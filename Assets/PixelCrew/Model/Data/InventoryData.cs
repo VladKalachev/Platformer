@@ -10,6 +10,10 @@ namespace PixelCrew.Model.Data
     {
         [SerializeField] private List<InventoryItemData> _inventory = new List<InventoryItemData>();
 
+        public delegate void OnInventoryChanged(string id, int value);
+        
+        public OnInventoryChanged OnChanged;
+        
         public void Add(string id, int value)
         {
             if (value <= 0) return;
@@ -25,6 +29,7 @@ namespace PixelCrew.Model.Data
             }
             
             item.Value += value;
+            OnChanged?.Invoke(id, Count(id));
         }
 
         public void Remove(string id, int value)
@@ -41,6 +46,8 @@ namespace PixelCrew.Model.Data
             {
                 _inventory.Remove(item);
             }
+            
+            OnChanged?.Invoke(id, Count(id));
         }
 
         private InventoryItemData GetItem(string id)
