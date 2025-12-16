@@ -1,4 +1,4 @@
-using NUnit.Framework;
+using PropertyAttribute = UnityEngine.PropertyAttribute;
 
 namespace PixelCrew.Model.Definitions
 {

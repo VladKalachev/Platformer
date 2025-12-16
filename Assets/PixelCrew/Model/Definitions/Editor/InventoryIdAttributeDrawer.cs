@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,7 +17,7 @@ namespace PixelCrew.Model.Definitions.Editor
             }
             
             var index = ids.IndexOf(property.stringValue);
-            EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
+            index = EditorGUI.Popup(position, property.displayName, index, ids.ToArray());
             property.stringValue = ids[index];
         }
     }
