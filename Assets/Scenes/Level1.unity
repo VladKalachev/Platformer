@@ -1250,9 +1250,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050304875
+    y: 0.050266568
     width: 1
-    height: 0.8999142
+    height: 0.9000857
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -2026,7 +2026,7 @@ GameObject:
   - component: {fileID: 710177353}
   - component: {fileID: 710177354}
   m_Layer: 10
-  m_Name: Sound
+  m_Name: Sounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2062,7 +2062,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
