@@ -116,8 +116,8 @@ namespace PixelCrew.Creatures.Hero
         {
             if (!IsGrounded && _allowDoubleJump && !_isOnWall)
             {
-                _particles.Spawn("Jump");
                 _allowDoubleJump = false;
+                DoJumpVfx();
                 return _jumpSpeed;
             }
             
@@ -196,6 +196,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnDoThrow()
         {
+            Sounds.Play("Range");
             _particles.Spawn("Throw");
         }
 
