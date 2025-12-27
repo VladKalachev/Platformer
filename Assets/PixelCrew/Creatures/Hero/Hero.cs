@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace PixelCrew.Creatures.Hero
 {
-    public class Hero : Creature
+    public class Hero : Creature, ICanAddInInventory
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
         [SerializeField] private LayoutCheck _wallCheck;
