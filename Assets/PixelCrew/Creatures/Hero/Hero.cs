@@ -13,7 +13,7 @@ namespace PixelCrew.Creatures.Hero
     public class Hero : Creature, ICanAddInInventory
     {
         [SerializeField] private CheckCircleOverlap _interactionCheck;
-        [SerializeField] private LayoutCheck _wallCheck;
+        [SerializeField] private ColliderCheck _wallCheck;
         
         [SerializeField] private float _slamDownVelocity;
         [SerializeField] private Cooldown  _throwCooldown;

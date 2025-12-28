@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace PixelCrew.Components.ColliderBased
 {
-    public class LayoutCheck : MonoBehaviour
+    public class ColliderCheck : MonoBehaviour
     {
         [SerializeField] private LayerMask _layer;
         [SerializeField] private bool _isTouchingLayer;
