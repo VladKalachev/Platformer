@@ -198,11 +198,12 @@ namespace PixelCrew.Creatures.Hero
         {
             Sounds.Play("Range");
             _particles.Spawn("Throw");
+            _session.Data.Inventory.Remove("Sword", 1);
         }
 
         public void Throw()
         {
-            if (_throwCooldown.IsReady)
+            if (_throwCooldown.IsReady && SwordCount > 1)
             {
                 Animator.SetTrigger(ThrowKey);
                 _throwCooldown.Reset();
