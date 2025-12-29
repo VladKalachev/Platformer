@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Threading;
+using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
@@ -26,9 +28,7 @@ namespace PixelCrew.Creatures.Hero
 
         [SerializeField] private int _superThrowParticles;
         [SerializeField] private float _superThrowDelay;
-        
-        [Space] [Header("Particles")] [SerializeField] 
-        private ParticleSystem _hitParticles;
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
@@ -152,20 +152,8 @@ namespace PixelCrew.Creatures.Hero
             var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
             _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
-            var burst = _hitParticles.emission.GetBurst(0);
-            burst.count = numCoinsToDispose;
-            _hitParticles.emission.SetBurst(0, burst);
-            
-            _hitParticles.gameObject.SetActive(true);
-            _hitParticles.Play();
-            
-            StartCoroutine(DisableParticlesAfterPlay());
-        }
-        
-        private IEnumerator DisableParticlesAfterPlay()
-        {
-            yield return new WaitWhile(() => _hitParticles.isPlaying);
-            _hitParticles.gameObject.SetActive(false);
+            _hitDrop.SetCount(numCoinsToDispose);
+            _hitDrop.CalculateDrop();
         }
 
         public void Interact()

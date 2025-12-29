@@ -148,6 +148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1077797621}
     - target: {fileID: 8774862184860602711, guid: 1ee83e153e1444123a2b086f40fccba8, type: 3}
+      propertyPath: _health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774862184860602711, guid: 1ee83e153e1444123a2b086f40fccba8, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -254,6 +258,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5008346943987993646, guid: 1ee83e153e1444123a2b086f40fccba8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 452165624}
+    - targetCorrespondingSourceObject: {fileID: 5008346943987993646, guid: 1ee83e153e1444123a2b086f40fccba8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 452165632}
   m_SourcePrefab: {fileID: 100100000, guid: 1ee83e153e1444123a2b086f40fccba8, type: 3}
 --- !u!1 &123315922 stripped
 GameObject:
@@ -304,6 +311,8 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 10
+      - Id: Coin
+        Value: 100
     Hp: 10
 --- !u!4 &364597184
 Transform:
@@ -336,6 +345,14 @@ PrefabInstance:
     - target: {fileID: 5008346943987993646, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Name
       value: Hero_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527808268697245294, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527808268697245294, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 8774862184860602711, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -412,6 +429,22 @@ MonoBehaviour:
   - {fileID: 739044881}
   - {fileID: 1077797621}
   _treshold: 1
+--- !u!114 &452165632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123315922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b20d01027724b4693d0232f7d515811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Audio.PlaySoundsComponent
+  _source: {fileID: 1164045112}
+  _sounds:
+  - _id: Melee
+    _clip: {fileID: 8300000, guid: 3feb0ca640c4e400895e9c73ce324719, type: 3}
 --- !u!1001 &544943796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5857,6 +5890,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2068971979089023392, guid: ead3d88ce8ee44107bb4dcc8e6fcc4e3, type: 3}
   m_PrefabInstance: {fileID: 1087568184}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1164045112 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2130252811632361302, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+  m_PrefabInstance: {fileID: 386701344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1164623281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8250691841517793499, guid: 826b768f97850433f8037045b015c95d, type: 3}
@@ -6047,9 +6085,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.75966644
-    width: 0.6440758
-    height: 0.5795584
+    y: 0.05003791
+    width: 1
+    height: 0.89982945
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

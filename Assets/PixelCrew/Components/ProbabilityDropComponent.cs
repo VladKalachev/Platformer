@@ -59,5 +59,10 @@ namespace PixelCrew.Components
         public class DropEvent : UnityEvent<GameObject[]>
         {
         }
+
+        public void SetCount(int count)
+        {
+            _count = count;
+        }
     }
 }
