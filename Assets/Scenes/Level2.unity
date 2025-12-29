@@ -301,7 +301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.GameSession
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: Sword
+        Value: 10
     Hp: 10
 --- !u!4 &364597184
 Transform:
@@ -342,6 +344,18 @@ PrefabInstance:
     - target: {fileID: 5008346943987993646, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Name
       value: Hero_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: _superThrowDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: _superThrowParticles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: _superThrowCooldown._value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8774862184860602711, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: _onDamage.m_PersistentCalls.m_Calls.Array.size
@@ -6096,9 +6110,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.7619772
-    width: 0.6459125
-    height: 0.5813213
+    y: 0.05003791
+    width: 1
+    height: 0.89982945
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34

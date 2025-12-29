@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
@@ -20,14 +21,21 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _disarmed;
         
-        [Space] [Header("Particles")]
-        [SerializeField] private ParticleSystem _hitParticles;
+        [Header("Super throw")] [SerializeField]
+        private Cooldown _superThrowCooldown;
+
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
+        
+        [Space] [Header("Particles")] [SerializeField] 
+        private ParticleSystem _hitParticles;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
+        private bool _superThrow;
         
         private GameSession _session;
         private float _defaultGravityScale;
@@ -196,18 +204,48 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnDoThrow()
         {
+            if (_superThrow)
+            {
+                var numThrow = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                StartCoroutine(DoSuperThrow(numThrow));
+            }
+            else
+            {
+                ThrowAndRemoveFromInventory();      
+            }
+            
+            _superThrow = true;
+        }
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+        private void ThrowAndRemoveFromInventory()
+        {
             Sounds.Play("Range");
             _particles.Spawn("Throw");
             _session.Data.Inventory.Remove("Sword", 1);
         }
-
-        public void Throw()
+        
+        public void StartThrowing()
         {
-            if (_throwCooldown.IsReady && SwordCount > 1)
-            {
-                Animator.SetTrigger(ThrowKey);
-                _throwCooldown.Reset();
-            }
+            _superThrowCooldown.Reset();
+        }
+
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady && SwordCount <= 1) return;
+
+            if (_superThrowCooldown.IsReady) _superThrow = true;
+            
+            Animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
     }
 };
