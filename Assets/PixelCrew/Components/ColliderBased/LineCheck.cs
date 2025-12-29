@@ -10,7 +10,7 @@ namespace PixelCrew.Components.ColliderBased
 
         private void Update()
         {
-            _isTouchingLayer = Physics2D.LinecastNonAlloc(transform.position, _target.position, _results) > 0;
+            _isTouchingLayer = Physics2D.LinecastNonAlloc(transform.position, _target.position, _results, _layer) > 0;
         }
         
         #if UNITY_EDITOR

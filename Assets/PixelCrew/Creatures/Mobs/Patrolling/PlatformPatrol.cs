@@ -6,7 +6,8 @@ namespace PixelCrew.Creatures.Mobs.Patrolling
 {
     public class PlatformPatrol: Patrol
     {
-        [SerializeField] private ColliderCheck _groundCheck;
+        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private LayerCheck _obstacleCheck;
         [SerializeField] private int _direction;
         [SerializeField] private Creature _creature;
         
@@ -14,7 +15,7 @@ namespace PixelCrew.Creatures.Mobs.Patrolling
         {
             while (enabled)
             {
-                if (_groundCheck.IsTouchingLayer)
+                if (_groundCheck.IsTouchingLayer && !_obstacleCheck.IsTouchingLayer)
                 {
                     _creature.SetDirection(new Vector2(_direction, 0));
                 }
