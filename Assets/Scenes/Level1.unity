@@ -1250,9 +1250,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050228313
+    y: 0.05003791
     width: 1
-    height: 0.8998288
+    height: 0.89982945
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1282,7 +1282,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7643476, y: -1.4844499, z: -10}
+  m_LocalPosition: {x: -1.7688804, y: -1.6319299, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14281,6 +14281,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 322223550}
     m_Modifications:
+    - target: {fileID: 4429518657787184253, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429518657787184253, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -314198425
+      objectReference: {fileID: 0}
     - target: {fileID: 5008346943987993646, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Name
       value: Hero_0
