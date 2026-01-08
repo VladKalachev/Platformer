@@ -16,12 +16,12 @@ namespace PixelCrew.UI
             _animator.SetTrigger(Show);
         }
 
-        private void Close()
+        public void Close()
         {
             _animator.SetTrigger(Hide);
         }
 
-        public void OnCloseAnimationComplete()
+        public virtual void OnCloseAnimationComplete()
         {
             Destroy(gameObject);
         }
