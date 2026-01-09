@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65b3eb4694042d286af18d725756bdd, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Data.GameSettings
+  _music:
+    _value: 0.264892
+  _sfx:
+    _value: 0.35428777

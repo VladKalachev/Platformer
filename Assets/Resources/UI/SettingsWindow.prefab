@@ -1092,8 +1092,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53528995477912335}
+  - component: {fileID: 6169693658295522109}
   m_Layer: 0
-  m_Name: VolumeItem
+  m_Name: MusicOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1117,6 +1118,20 @@ Transform:
   - {fileID: 4078658511856110625}
   m_Father: {fileID: 3227709730924266678}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6169693658295522109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093773473326100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffbed3da1ee446a96978855e145d1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.AudioSettingsWidget
+  _slider: {fileID: 8658602434812584394}
+  _value: {fileID: 8026699508931897060}
 --- !u!1 &5206090027391335923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,8 +1141,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3780555616807140385}
+  - component: {fileID: 6938891638926669664}
   m_Layer: 0
-  m_Name: VolumeItem (1)
+  m_Name: SfxOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1151,6 +1167,20 @@ Transform:
   - {fileID: 3013788401738472011}
   m_Father: {fileID: 3227709730924266678}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6938891638926669664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206090027391335923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffbed3da1ee446a96978855e145d1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.AudioSettingsWidget
+  _slider: {fileID: 1003139978106680193}
+  _value: {fileID: 3904797672243574340}
 --- !u!1 &5451975257194983173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7d7d9d0d1542e8acfb8f4b9c300c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Settings.SettingsWindow
+  _music: {fileID: 6169693658295522109}
+  _sfx: {fileID: 6938891638926669664}
 --- !u!1 &7848574074290340939
 GameObject:
   m_ObjectHideFlags: 0

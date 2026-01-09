@@ -30,7 +30,7 @@ namespace PixelCrew.Model.Data.Properties
                 Write(value);
                 _stored = _value = value;
                     
-                OnChanged?.Invoke(oldValue, value);
+                OnChanged?.Invoke(value, oldValue);
             }
         }
 
