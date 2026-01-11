@@ -1,5 +1,8 @@
+using System;
+
 namespace PixelCrew.Model.Data.Properties
 {
+    [Serializable]
     public class IntProperty : ObservableProperty<int>
     {
         public IntProperty(int defaultValue) : base(defaultValue)
@@ -7,13 +10,13 @@ namespace PixelCrew.Model.Data.Properties
         }
 
         protected override void Write(int value)
-        {
-           _value = value;
+        { 
+            _stored = value;
         }
 
         protected override int Read(int defaultValue)
         {
-           return _value;
+           return _stored;
         }
     }
 }

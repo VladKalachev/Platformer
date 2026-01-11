@@ -9,6 +9,8 @@ namespace PixelCrew.Model.Definitions
         
         public InventoryItemDef Items => _items;
         
+        public PlayerDef Player;
+        
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadingDefs() : _instance;
 

@@ -7,7 +7,7 @@ namespace PixelCrew.Model.Data.Properties
     public abstract class ObservableProperty<TPropertyType>
     {
         [SerializeField] protected TPropertyType _value;
-        private TPropertyType _stored;
+        protected TPropertyType _stored;
         
         private TPropertyType _defaultValue;
         

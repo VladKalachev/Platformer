@@ -1526,7 +1526,8 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory: []
-    Hp: 2
+    Hp:
+      _value: 10
 --- !u!4 &548485629
 Transform:
   m_ObjectHideFlags: 0
