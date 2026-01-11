@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Data.GameSettings
   _music:
-    _value: 0.264892
+    _value: 0.73
   _sfx:
-    _value: 0.35428777
+    _value: 0.39264053
