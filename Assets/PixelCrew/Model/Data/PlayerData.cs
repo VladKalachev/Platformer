@@ -9,7 +9,7 @@ namespace PixelCrew.Model.Data
     {
         [SerializeField] private InventoryData _inventory;
         
-        public IntProperty Hp =  new IntProperty(1);
+        public IntProperty Hp =  new IntProperty();
 
         public InventoryData Inventory => _inventory;
         

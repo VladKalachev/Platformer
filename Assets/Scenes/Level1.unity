@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 326942428}
   - component: {fileID: 326942430}
   - component: {fileID: 326942429}
+  - component: {fileID: 326942431}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -342,6 +343,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326942427}
   m_CullTransparentMesh: 1
+--- !u!114 &326942431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326942427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7f8dae54434a86a597d001b12994f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.ProgressBarWidget
+  _bar: {fileID: 1192347996}
 --- !u!1 &341632833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1372,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7643476, y: -1.4844499, z: -10}
+  m_LocalPosition: {x: 3.2, y: 5.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11967,7 +11981,7 @@ Transform:
   m_GameObject: {fileID: 1100417416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.83752, y: -8.23845, z: -10}
+  m_LocalPosition: {x: 0.16673017, y: -0.20461988, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12014,6 +12028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1115094047}
+  - component: {fileID: 1115094048}
   m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged
@@ -12041,6 +12056,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1115094048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115094046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20acea39e1542e7b8cf3e657cda7da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Hud.HudController
+  _healthBar: {fileID: 326942431}
 --- !u!114 &1145584343 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 647608052948538600, guid: 4f4be770058454a43b61fc4f359b4298, type: 3}
@@ -14737,11 +14765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8042502
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7838297
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.z
