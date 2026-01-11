@@ -1,17 +1,17 @@
 namespace PixelCrew.Model.Data.Properties
 {
-    public class IntProperty : ObservableProperty<float>
+    public class IntProperty : ObservableProperty<int>
     {
-        public IntProperty(float defaultValue) : base(defaultValue)
+        public IntProperty(int defaultValue) : base(defaultValue)
         {
         }
 
-        protected override void Write(float value)
+        protected override void Write(int value)
         {
            _value = value;
         }
 
-        protected override float Read(float defaultValue)
+        protected override int Read(int defaultValue)
         {
            return _value;
         }
