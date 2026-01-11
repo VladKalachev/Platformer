@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.InventoryItemDef
   _items:
   - _id: Coin
+    _isStackable: 1
   - _id: Sword
+    _isStackable: 0
   - _id: Key
+    _isStackable: 1

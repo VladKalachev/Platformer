@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DefsFacade
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.DefsFacade
   _items: {fileID: 11400000, guid: c4ddccd3895af4b03aa69f1ecde0c0b8, type: 2}
+  _player: {fileID: 11400000, guid: 74e4ff159fc004602bc4c5a1f1fea778, type: 2}
