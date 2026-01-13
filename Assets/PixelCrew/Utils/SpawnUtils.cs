@@ -4,7 +4,7 @@ namespace PixelCrew.Utils
 {
     public class SpawnUtils
     {
-        private const string ContainerName = "###SPWNED###";
+        private const string ContainerName = "###SPAWNED###";
 
         public static GameObject Spawn(GameObject prefab, Vector3 position)
         {
@@ -12,7 +12,7 @@ namespace PixelCrew.Utils
             if (container == null)
                 container = new GameObject(ContainerName);
 
-            Object.Instantiate(prefab, position, Quaternion.identity, container.transform);
+            return Object.Instantiate(prefab, position, Quaternion.identity, container.transform);
         }
     }
 }
