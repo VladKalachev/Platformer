@@ -52,6 +52,11 @@ namespace PixelCrew.Model.Data
             OnChanged?.Invoke(id, Count(id));
         }
 
+        public InventoryItemData[] GetAll()
+        {
+            return _inventory.ToArray();
+        }
+        
         public void Remove(string id, int value)
         {
             var itemDef = DefsFacade.I.Items.Get(id);
