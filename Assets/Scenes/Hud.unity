@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 554118954}
   - component: {fileID: 554118956}
   - component: {fileID: 554118955}
+  - component: {fileID: 554118957}
   m_Layer: 5
   m_Name: QuickInventory
   m_TagString: Untagged
@@ -577,6 +578,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554118953}
   m_CullTransparentMesh: 1
+--- !u!114 &554118957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554118953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c38ab41ad294097bf612c8da16e3643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Hud.QuickInventory.QuickInventoryController
+  _container: {fileID: 412040590}
+  _prefab: {fileID: 928203394}
 --- !u!1 &928203392
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,13 +601,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928203393}
+  - component: {fileID: 928203394}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &928203393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -610,11 +626,26 @@ RectTransform:
   - {fileID: 149222142}
   m_Father: {fileID: 412040590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 7.5, y: -7.5}
   m_SizeDelta: {x: 13, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &928203394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928203392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c752d862c4d4e77b74bdb902944096c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Hud.QuickInventory.InventoryItemWidget
+  _icon: {fileID: 545178247}
+  _selection: {fileID: 1704264675}
+  _value: {fileID: 149222143}
 --- !u!1 &1370309928
 GameObject:
   m_ObjectHideFlags: 0
