@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.InventoryItemDef
   _items:
   - _id: Coin
-    _isStackable: 1
     _icon: {fileID: -2322180950842035098, guid: da306ac7a8ec6407d808f4d0dd7535ab, type: 3}
+    _tags: 0000000001000000
   - _id: Sword
-    _isStackable: 0
     _icon: {fileID: 21300000, guid: 4e2d7b852f42a453598f947579b7fa0a, type: 3}
+    _tags: 010000000000000002000000
   - _id: Key
-    _isStackable: 1
     _icon: {fileID: 21300000, guid: 988c32e6d72694fa2a2e395a98fe8287, type: 3}
+    _tags: 

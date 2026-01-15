@@ -41,6 +41,14 @@ namespace PixelCrew.Creatures.Hero
                 _hero.PerformThrowing();
             }
         }
+        
+        public void OnNextItem(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.NextItem();
+            }
+        }
     }
     
 }

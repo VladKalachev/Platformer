@@ -235,5 +235,10 @@ namespace PixelCrew.Creatures.Hero
             Animator.SetTrigger(ThrowKey);
             _throwCooldown.Reset();
         }
+
+        public void NextItem()
+        {
+            _session.QuickInventory.SetNextItem();
+        }
     }
 };

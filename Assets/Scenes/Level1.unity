@@ -1250,9 +1250,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.050181817
+    y: 0
     width: 1
-    height: 0.9
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1449,7 +1449,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.GameSession
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: Sword
+        Value: 10
+      - Id: Coin
+        Value: 10
     Hp:
       _value: 10
 --- !u!4 &548485629
@@ -12006,6 +12010,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Audio.PlaySoundsComponent
   _sounds: []
+--- !u!114 &1245290473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2882775969375054121, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+  m_PrefabInstance: {fileID: 7016733643823747722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39321146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a26cda8a953487e911007ccb8420cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeroInputReader
 --- !u!4 &1355472237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8911213453593475526, guid: cd89c3e127e364064b0c9c73ec90c0ed, type: 3}
@@ -14306,6 +14321,46 @@ PrefabInstance:
     - target: {fileID: 2130252811632361302, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: b07f8c8a-293d-45ee-977a-03b2d4092db9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: 'Hero/NextItem[/Keyboard/q]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1245290473}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNextItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PixelCrew.Creatures.Hero.HeroInputReader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795649942699409968, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4429518657787184253, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_SortingLayer
