@@ -27,7 +27,7 @@ namespace PixelCrew.Model.Data.Properties
             return dispose;
         }
 
-        public TPropertyType Value
+        public virtual TPropertyType Value
         {
             get => _value;
             set
@@ -35,10 +35,14 @@ namespace PixelCrew.Model.Data.Properties
                 var isSame = _value.Equals(value);
                 if (isSame) return;
                 var oldValue = _value;
-                
+                InvokeChangedEvent(_value, oldValue);
                 _value = value;
-                OnChanged?.Invoke(_value, oldValue);
             }
+        }
+
+        protected void InvokeChangedEvent(TPropertyType newValue, TPropertyType oldValue)
+        {
+            OnChanged?.Invoke(newValue, oldValue);
         }
     }
 }
