@@ -20,5 +20,10 @@ namespace PixelCrew.Components.GoBased
             
             instantiate.SetActive(true);
         }
+
+        public void SetPrefab(GameObject prefab)
+        {
+            _prefab =  prefab;
+        }
     }
 }

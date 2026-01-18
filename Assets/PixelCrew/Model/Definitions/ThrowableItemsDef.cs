@@ -8,13 +8,13 @@ namespace PixelCrew.Model.Definitions
     {
         [SerializeField] private ThrowableDef[] _items;
         
-        public ItemDef Get(string id)
+        public ThrowableDef Get(string id)
         {
             foreach (var itemDef in _items)
             {
                 if (itemDef.Id == id)
                 {
-                    // return itemDef;
+                    return itemDef;
                 }
             }
 
@@ -23,7 +23,7 @@ namespace PixelCrew.Model.Definitions
     }
 
     [Serializable]
-    public class ThrowableDef
+    public struct ThrowableDef
     {
        [InventoryId] [SerializeField] private string _id;
        [SerializeField] private GameObject _projectile;

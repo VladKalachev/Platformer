@@ -7,6 +7,7 @@ using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
+using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -29,6 +30,7 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private int _superThrowParticles;
         [SerializeField] private float _superThrowDelay;
         [SerializeField] private ProbabilityDropComponent _hitDrop;
+        [SerializeField] private SpawnComponent _throwSpawner;
         
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWallKey = Animator.StringToHash("is-on-wall");
@@ -217,8 +219,13 @@ namespace PixelCrew.Creatures.Hero
         private void ThrowAndRemoveFromInventory()
         {
             Sounds.Play("Range");
-            _particles.Spawn("Throw");
-            _session.Data.Inventory.Remove("Sword", 1);
+          
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+            _throwSpawner.SetPrefab(throwableDef.Projectile);  
+            _throwSpawner.Spawn();
+            
+            _session.Data.Inventory.Remove(throwableId, 1);
         }
         
         public void StartThrowing()
