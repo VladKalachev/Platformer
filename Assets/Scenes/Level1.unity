@@ -1450,7 +1450,7 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Sword
+      - Id: PearlProjectile
         Value: 10
       - Id: Coin
         Value: 10

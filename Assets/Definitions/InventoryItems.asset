@@ -22,3 +22,9 @@ MonoBehaviour:
   - _id: Key
     _icon: {fileID: 21300000, guid: 988c32e6d72694fa2a2e395a98fe8287, type: 3}
     _tags: 
+  - _id: HealthPotion
+    _icon: {fileID: 1185527514606905908, guid: 1bead8193ac2e4182bb4a49aac3ced96, type: 3}
+    _tags: 
+  - _id: PearlProjectile
+    _icon: {fileID: 21300000, guid: 57fdc2cffd5364297ae8a9f589a0602b, type: 3}
+    _tags: 000000000100000002000000
