@@ -56,7 +56,7 @@ namespace PixelCrew.Creatures.Hero
                 if (SelectedItemId == SwordId)
                     return SwordCount > 1;
                 
-                var def = DefsFacade.I.Items.Get(SelectedItemId;
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
                 return def.HasTag(ItemTag.Throwable);
                 
             }
@@ -213,7 +213,10 @@ namespace PixelCrew.Creatures.Hero
         {
             if (_superThrow)
             {
-                var numThrow = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+                var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
+                
+                var numThrow = Mathf.Min(_superThrowParticles, possibleCount);
                 StartCoroutine(DoSuperThrow(numThrow));
             }
             else
