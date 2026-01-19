@@ -58,7 +58,6 @@ namespace PixelCrew.Creatures.Hero
                 
                 var def = DefsFacade.I.Items.Get(SelectedItemId);
                 return def.HasTag(ItemTag.Throwable);
-                
             }
         }
 
@@ -224,7 +223,7 @@ namespace PixelCrew.Creatures.Hero
                 ThrowAndRemoveFromInventory();      
             }
             
-            _superThrow = true;
+            _superThrow = false;
         }
 
         private IEnumerator DoSuperThrow(int numThrows)
@@ -255,7 +254,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady && !CanThrow) return;
+            if (!_throwCooldown.IsReady || !CanThrow) return;
 
             if (_superThrowCooldown.IsReady) _superThrow = true;
             

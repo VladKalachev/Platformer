@@ -1250,9 +1250,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.050181817
     width: 1
-    height: 1
+    height: 0.9
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1451,8 +1451,8 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: PearlProjectile
-        Value: 10
-      - Id: Coin
+        Value: 20
+      - Id: Sword
         Value: 10
     Hp:
       _value: 10
@@ -2020,6 +2020,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6178457153852211956, guid: 3c164eb00d088443ca6c1156c5380e46, type: 3}
   m_PrefabInstance: {fileID: 700425503}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &713943884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3688221878773495377, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+  m_PrefabInstance: {fileID: 7016733643823747722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ff71ca1c24ff2afe54e5f2fc19c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.SpawnComponent
 --- !u!1 &754174734
 GameObject:
   m_ObjectHideFlags: 0
@@ -14318,6 +14329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 322223550}
     m_Modifications:
+    - target: {fileID: 2071558542584940828, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: m_Name
+      value: ThrowSpawnPosition
+      objectReference: {fileID: 0}
     - target: {fileID: 2130252811632361302, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -14375,13 +14390,17 @@ PrefabInstance:
       value: Hero_0
       objectReference: {fileID: 0}
     - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
+      propertyPath: _throwSpawner
+      value: 
+      objectReference: {fileID: 713943884}
+    - target: {fileID: 5698044941628632584, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: _damageVelocity
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6033778324494763633, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 0e0cccfab9ff1463bb16d3f044d43c98, type: 2}
+      objectReference: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
     - target: {fileID: 8774862184860602711, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: _health
       value: 2
