@@ -42,8 +42,25 @@ namespace PixelCrew.Creatures.Hero
         private GameSession _session;
         private float _defaultGravityScale;
         
+        private const string SwordId = "Sword";
+        
         private int CoinsCount => _session.Data.Inventory.Count("Coin");
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
+
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+
+        private bool CanThrow
+        {
+            get
+            {
+                if (SelectedItemId == SwordId)
+                    return SwordCount > 1;
+                
+                var def = DefsFacade.I.Items.Get(SelectedItemId;
+                return def.HasTag(ItemTag.Throwable);
+                
+            }
+        }
 
         protected override void Awake()
         {
@@ -75,7 +92,7 @@ namespace PixelCrew.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == "Sword")
+            if (id == SwordId)
             {
                 UpdateHeroWeapon();
             }
@@ -235,7 +252,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void PerformThrowing()
         {
-            if (!_throwCooldown.IsReady && SwordCount <= 1) return;
+            if (!_throwCooldown.IsReady && !CanThrow) return;
 
             if (_superThrowCooldown.IsReady) _superThrow = true;
             
