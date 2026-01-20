@@ -9,7 +9,6 @@ namespace PixelCrew.Model.Data
         [SerializeField] private FloatPersistentProperty _music;
         
         [SerializeField] private FloatPersistentProperty _sfx;
-        
         public FloatPersistentProperty Music => _music;
         public FloatPersistentProperty Sfx => _sfx;
 
