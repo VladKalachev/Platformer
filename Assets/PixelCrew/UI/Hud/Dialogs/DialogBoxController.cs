@@ -62,7 +62,44 @@ namespace PixelCrew.UI.Hud.Dialogs
         {
             _typingCoroutine = StartCoroutine(TypeDialogText());
         }
-        
+
+        public void OnSkip()
+        {
+            if (_typingCoroutine == null) return;
+
+            StopTypeAnimation();
+            _text.text = _data.Sentences[_currentSentence];
+        }
+
+        private void StopTypeAnimation()
+        {
+            if (_typingCoroutine != null) 
+                StopCoroutine(_typingCoroutine);
+            _typingCoroutine = null;
+        }
+
+        public void OnContinue()
+        {
+            StopTypeAnimation();
+            _currentSentence++;
+            
+            var isDialogCompleted = _currentSentence >= _data.Sentences.Length;
+            if (isDialogCompleted)
+            {
+                HideDialogBox();
+            }
+            else
+            {
+                OnStartDialogAnimation();
+            }
+        }
+
+        private void HideDialogBox()
+        {
+            _animator.SetBool(IsOpen, false);
+            _sfxSource.PlayOneShot(_close);
+        }
+
         private void OnCloseDialogAnimation()
         {
             
