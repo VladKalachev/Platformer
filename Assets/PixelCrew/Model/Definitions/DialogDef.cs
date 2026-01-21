@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
 {
+    [CreateAssetMenu(menuName = "PixelCrew/Dialog", fileName = "Dialog")]
     public class DialogDef : ScriptableObject
     {
         [SerializeField] private DialogData _data;
