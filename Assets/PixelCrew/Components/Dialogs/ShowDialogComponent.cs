@@ -22,6 +22,12 @@ namespace PixelCrew.Components.Dialogs
             _dialogBox.ShowDialog(Data);
         }
 
+        public void Show(DialogDef def)
+        {
+            _external = def;
+            Show();
+        }
+
         public DialogData Data
         {
             get
