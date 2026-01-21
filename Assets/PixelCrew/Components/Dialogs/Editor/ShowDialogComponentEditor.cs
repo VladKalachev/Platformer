@@ -1,8 +1,10 @@
 using System;
+using PixelCrew.Model.Definitions;
 using UnityEditor;
 
 namespace PixelCrew.Components.Dialogs.Editor
 {
+    [CustomEditor(typeof(ShowDialogComponent))]
     public class ShowDialogComponentEditor : UnityEditor.Editor
     {
         private SerializedProperty _modeProperty;
@@ -14,6 +16,11 @@ namespace PixelCrew.Components.Dialogs.Editor
         public override void OnInspectorGUI()
         {
             EditorGUILayout.PropertyField(_modeProperty);
+            
+            // _modeProperty.animationCurveValue.
+            
+            
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }
