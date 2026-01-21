@@ -36,8 +36,8 @@ namespace PixelCrew.Components.Dialogs
                         throw new ArgumentOutOfRangeException();
                 }
             }
+        
         }
-    }
 
         public enum Mode
         {

@@ -1282,7 +1282,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 5.2, z: -10}
+  m_LocalPosition: {x: -1.7238669, y: -1.63236, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1452,8 +1452,6 @@ MonoBehaviour:
       _inventory:
       - Id: PearlProjectile
         Value: 20
-      - Id: Sword
-        Value: 10
     Hp:
       _value: 10
 --- !u!4 &548485629
@@ -11906,7 +11904,7 @@ Transform:
   m_GameObject: {fileID: 1100417416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16673017, y: -0.25462008, z: -10}
+  m_LocalPosition: {x: -4.79227, y: -8.230619, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13984,6 +13982,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5578084584800129270, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1948488144806676233}
+    - targetCorrespondingSourceObject: {fileID: 5578084584800129270, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1948488144806676237}
   m_SourcePrefab: {fileID: 100100000, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
 --- !u!1 &1948488144806676226 stripped
 GameObject:
@@ -14065,12 +14066,43 @@ MonoBehaviour:
         m_CallState: 2
   _onFail:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1948488144806676237}
+        m_TargetAssemblyTypeName: PixelCrew.Components.Dialogs.ShowDialogComponent,
+          Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1948488144806676236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8360663991513280788, guid: 407bb2fa7d3e447dc979f2dd6c8d3832, type: 3}
   m_PrefabInstance: {fileID: 1948488144806676225}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1948488144806676237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948488144806676226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf2bb9eb4fb45b5b24b584c290aeb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Dialogs.ShowDialogComponent
+  _mode: 0
+  _bound:
+    _sentences:
+    - You need a key ...
+    - Try to search upper floor.
+  _external: {fileID: 0}
 --- !u!1001 &1991770632477124149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14443,11 +14475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2
+      value: -1.759
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2
+      value: -2.776
       objectReference: {fileID: 0}
     - target: {fileID: 9134229494314148292, guid: 12dc8eb7dd2854787a9f53f1fae4de67, type: 3}
       propertyPath: m_LocalPosition.z
