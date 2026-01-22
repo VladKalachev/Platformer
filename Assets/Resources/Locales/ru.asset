@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417430cb4f7149f9a91a59e8eca53c04, type: 3}
   m_Name: ru
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.Localization.LocaleDef
-  _url: 
-  _localeItems: []
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSsyxtZPV_j571OfhgLx93fFBVS1AbRqa6EMupb4gtNqXysKGOkWm147p7DqRjTU2RFd2haYOkB0i1K/pub?gid=0&single=true&output=tsv
+  _localeItems:
+  - Key: menu_title
+    Value: "\u043C\u0435\u043D\u044E\r"
+  - Key: button_start
+    Value: "\u0441\u0442\u0430\u0440\u0442\r"
+  - Key: button_option
+    Value: "\u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438\r"
+  - Key: button_exit
+    Value: "\u0432\u044B\u0445\u043E\u0434\r"
+  - Key: selected_language
+    Value: "\u0432\u044B\u0431\u0440\u0430\u0442\u044C \u044F\u0437\u044B\u043A:
+      {0}"

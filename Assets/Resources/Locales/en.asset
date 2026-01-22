@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: en
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.Localization.LocaleDef
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSsyxtZPV_j571OfhgLx93fFBVS1AbRqa6EMupb4gtNqXysKGOkWm147p7DqRjTU2RFd2haYOkB0i1K/pub?gid=1551408748&single=true&output=tsv
-  _localeItems: []
+  _localeItems:
+  - Key: menu_title
+    Value: "menu\r"
+  - Key: button_start
+    Value: "start\r"
+  - Key: button_option
+    Value: "option\r"
+  - Key: button_exit
+    Value: "exit\r"
+  - Key: selected_language
+    Value: 'selected language: {0}'
