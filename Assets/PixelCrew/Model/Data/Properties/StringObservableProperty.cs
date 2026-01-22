@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data.Properties
 {
+    [Serializable]
     public class StringObservableProperty : PrefsPersistentProperty<string>
     {
         public StringObservableProperty(string defaultValue, string key) : base(defaultValue, key)
