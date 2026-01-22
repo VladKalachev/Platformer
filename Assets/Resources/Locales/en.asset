@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417430cb4f7149f9a91a59e8eca53c04, type: 3}
+  m_Name: en
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Model.Definitions.Localization.LocaleDef
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vSsyxtZPV_j571OfhgLx93fFBVS1AbRqa6EMupb4gtNqXysKGOkWm147p7DqRjTU2RFd2haYOkB0i1K/pub?gid=1551408748&single=true&output=tsv
+  _localeItems: []
