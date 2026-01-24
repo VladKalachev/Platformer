@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using PixelCrew.Model.Data.Properties;
+using PixelCrew.UI.Windows.Localization;
 using UnityEngine;
 
 namespace PixelCrew.Model.Definitions.Localization
@@ -9,10 +10,12 @@ namespace PixelCrew.Model.Definitions.Localization
     {
         public readonly static LocalizationManager I;
 
-        private StringObservableProperty _currentLocale = new StringObservableProperty("en", "localization/current");
+        private StringObservableProperty _localeKey = new StringObservableProperty("en", "localization/current");
 
         private Dictionary<string, string> _localization;
         public event Action OnLocaleChange;
+        
+        public string LocaleKey => _localeKey.Value;
         static LocalizationManager()
         {
             I = new LocalizationManager();
@@ -20,7 +23,7 @@ namespace PixelCrew.Model.Definitions.Localization
 
         public LocalizationManager()
         {
-            LoadLocale(_currentLocale.Value);
+            LoadLocale(_localeKey.Value);
         }
 
         private void LoadLocale(string localeToLoad)
@@ -38,6 +41,11 @@ namespace PixelCrew.Model.Definitions.Localization
             }
 
             return $"%%%{key}%%%%";
+        }
+
+        public void SetLocale(string localeKey)
+        {
+            LoadLocale(localeKey);
         }
     }
 }

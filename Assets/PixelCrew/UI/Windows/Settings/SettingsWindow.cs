@@ -2,7 +2,7 @@ using PixelCrew.Model.Data;
 using PixelCrew.UI.Widgets;
 using UnityEngine;
 
-namespace PixelCrew.UI.Settings
+namespace PixelCrew.UI.Windows.Settings
 {
     public class SettingsWindow: AnimatedWindow
     {
