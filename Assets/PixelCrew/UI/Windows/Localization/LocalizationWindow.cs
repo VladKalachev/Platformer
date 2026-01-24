@@ -32,7 +32,7 @@ namespace PixelCrew.UI.Windows.Localization
             return data;
         }
 
-        private void OnSelected(string selectedLocale)
+        public void OnSelected(string selectedLocale)
         {
             LocalizationManager.I.SetLocale(selectedLocale);
         }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace PixelCrew.UI.Windows.Localization
 {
-    public class LocaleItemWidget: MonoBehaviour, DataGroup.IItemRender<LocaleInfo>
+    public class LocaleItemWidget: MonoBehaviour,IItemRender<LocaleInfo>
     {
         [SerializeField] private Text _text;
         [SerializeField] private GameObject _selector;
