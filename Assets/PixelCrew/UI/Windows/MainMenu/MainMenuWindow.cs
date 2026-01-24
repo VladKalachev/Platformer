@@ -1,4 +1,5 @@
 using System;
+using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,11 @@ namespace PixelCrew.UI.Windows.MainMenu
                 SceneManager.LoadScene("Level1");
             };
             Close();
+        }
+
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
         }
         
         public void OnExit()

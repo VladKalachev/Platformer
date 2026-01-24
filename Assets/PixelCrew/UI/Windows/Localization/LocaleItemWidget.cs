@@ -37,6 +37,11 @@ namespace PixelCrew.UI.Windows.Localization
         {
             _onSelected?.Invoke(_data.LocaleId);
         }
+
+        private void OnDestroy()
+        {
+            LocalizationManager.I.OnLocaleChange -= UpdateSelection;
+        }
     }
 
     [Serializable]

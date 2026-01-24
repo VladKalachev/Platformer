@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5752145226077071758}
   - component: {fileID: 2270208649889894002}
   - component: {fileID: 8969399551972489030}
+  - component: {fileID: 3922123578077041509}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: START
+--- !u!114 &3922123578077041509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675202531214241680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_start
+  _capitalize: 1
 --- !u!1 &706024783732110132
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +166,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234f5ab3f9ca4f3eb13c65aa3459287d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.MainMenu.MainMenuWindow
+--- !u!1 &1148419815301384015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5048096736845219467}
+  - component: {fileID: 8648551997634543880}
+  - component: {fileID: 9057476301697866774}
+  - component: {fileID: 7082731464391835453}
+  m_Layer: 5
+  m_Name: PressedText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5048096736845219467
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148419815301384015}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065538190735723293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -1.2400017}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8648551997634543880
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148419815301384015}
+  m_CullTransparentMesh: 1
+--- !u!114 &9057476301697866774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148419815301384015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4acc3614e5084404996cb94d7efa5119, type: 3}
+    m_FontSize: 7
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: LANGUAGES
+--- !u!114 &7082731464391835453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148419815301384015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_option
+  _capitalize: 1
 --- !u!1 &2497647049025984773
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +271,7 @@ GameObject:
   - component: {fileID: 6681908842143505354}
   - component: {fileID: 7253040347660645220}
   - component: {fileID: 2024357312731263235}
+  - component: {fileID: 1271923903714634545}
   m_Layer: 5
   m_Name: PressedText
   m_TagString: Untagged
@@ -230,6 +340,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OPTIONS
+--- !u!114 &1271923903714634545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497647049025984773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_option
+  _capitalize: 1
 --- !u!1 &2652307207469822017
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +365,7 @@ GameObject:
   - component: {fileID: 2289075540543871916}
   - component: {fileID: 2999665091274309260}
   - component: {fileID: 5621374386163137071}
+  - component: {fileID: 4039492854828324429}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -309,6 +434,114 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OPTIONS
+--- !u!114 &4039492854828324429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652307207469822017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_option
+  _capitalize: 1
+--- !u!1 &2656963925920442636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5135039657349469499}
+  - component: {fileID: 4913404498098172251}
+  - component: {fileID: 1114291171980586802}
+  - component: {fileID: 8183023008973123345}
+  m_Layer: 5
+  m_Name: NormalText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5135039657349469499
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656963925920442636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065538190735723293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4913404498098172251
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656963925920442636}
+  m_CullTransparentMesh: 1
+--- !u!114 &1114291171980586802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656963925920442636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4acc3614e5084404996cb94d7efa5119, type: 3}
+    m_FontSize: 7
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: LANGUAGES
+--- !u!114 &8183023008973123345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656963925920442636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_option
+  _capitalize: 1
 --- !u!1 &3052738996980520874
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +643,7 @@ GameObject:
   - component: {fileID: 5957489542799484308}
   - component: {fileID: 8530391455320158768}
   - component: {fileID: 1296528793638335487}
+  - component: {fileID: 298623988157438977}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -478,6 +712,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: EXIT
+--- !u!114 &298623988157438977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4129805462785356483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_exit
+  _capitalize: 1
 --- !u!1 &4682901832363221327
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +738,7 @@ GameObject:
   - component: {fileID: 2443305377311097696}
   - component: {fileID: 3471826981698175384}
   - component: {fileID: 3377030536613395673}
+  - component: {fileID: 5161366443585894241}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -614,6 +863,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 4129805462785356483}
   _pressed: {fileID: 8046366519567168320}
+--- !u!114 &5161366443585894241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682901832363221327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1414fc847e44167aff78d0424ce9fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.ButtonSound
+  _audioClip: {fileID: 8300000, guid: 2c1f13afb0fd649d6a89c5b65ab04a94, type: 3}
 --- !u!1 &4864700208593468846
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +907,7 @@ RectTransform:
   m_Children:
   - {fileID: 7452686495176954596}
   - {fileID: 9083690783276731080}
+  - {fileID: 1065538190735723293}
   - {fileID: 8038762025329793059}
   m_Father: {fileID: 2835650870183388103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -691,6 +954,7 @@ GameObject:
   - component: {fileID: 4400241702860990299}
   - component: {fileID: 7319628042853149704}
   - component: {fileID: 4463169041998871810}
+  - component: {fileID: 2481124393088268091}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -815,6 +1079,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 675202531214241680}
   _pressed: {fileID: 5439810200178628301}
+--- !u!114 &2481124393088268091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966555786096921136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1414fc847e44167aff78d0424ce9fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.ButtonSound
+  _audioClip: {fileID: 8300000, guid: 2c1f13afb0fd649d6a89c5b65ab04a94, type: 3}
 --- !u!1 &5439810200178628301
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +1103,7 @@ GameObject:
   - component: {fileID: 8273966493970556331}
   - component: {fileID: 7451419784914188046}
   - component: {fileID: 4781903830876896751}
+  - component: {fileID: 8900699217361464931}
   m_Layer: 5
   m_Name: PressedText
   m_TagString: Untagged
@@ -894,6 +1172,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: START
+--- !u!114 &8900699217361464931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439810200178628301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_start
+  _capitalize: 1
 --- !u!1 &5844360096927222894
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +1197,7 @@ GameObject:
   - component: {fileID: 5531647545837622334}
   - component: {fileID: 1978390517177641805}
   - component: {fileID: 7896096886727477792}
+  - component: {fileID: 5945090298144424157}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -973,6 +1266,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Main menu
+--- !u!114 &5945090298144424157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844360096927222894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: menu_title
+  _capitalize: 0
 --- !u!1 &8046366519567168320
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1291,7 @@ GameObject:
   - component: {fileID: 3741221937407987470}
   - component: {fileID: 103891539439146000}
   - component: {fileID: 1666060544648414894}
+  - component: {fileID: 2175818323974018660}
   m_Layer: 5
   m_Name: PressedText
   m_TagString: Untagged
@@ -1052,6 +1360,170 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: EXIT
+--- !u!114 &2175818323974018660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046366519567168320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57afe351567409e8c900bf6e1804b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Localization._localization
+  _key: button_exit
+  _capitalize: 1
+--- !u!1 &8050617879357873866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065538190735723293}
+  - component: {fileID: 7683778148549504660}
+  - component: {fileID: 5175252084311435549}
+  - component: {fileID: 2611365910415549032}
+  - component: {fileID: 7666425455890063941}
+  m_Layer: 5
+  m_Name: Languages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1065538190735723293
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050617879357873866}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5135039657349469499}
+  - {fileID: 5048096736845219467}
+  m_Father: {fileID: 8517642577166540455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 72.326, y: 14}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7683778148549504660
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050617879357873866}
+  m_CullTransparentMesh: 1
+--- !u!114 &5175252084311435549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050617879357873866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7075472, g: 0.6842941, b: 0.1768868, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a175b3a48d49f46fa928cb5443e59eec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2611365910415549032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050617879357873866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9250dbae4f747408ab6ff3555255d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.CustomButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: a175b3a48d49f46fa928cb5443e59eec, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: ff0e18ed62e07470ab7ed4455c5e7acd, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 82694ff5b5bad45eeaa2a8ac7ba00eb2, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 182a662a337894a0cb70734f728b31cf, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 5175252084311435549}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7382585910906412376}
+        m_TargetAssemblyTypeName: PixelCrew.UI.Windows.MainMenu.MainMenuWindow, Assembly-CSharp
+        m_MethodName: OnLanguages
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _normal: {fileID: 2656963925920442636}
+  _pressed: {fileID: 1148419815301384015}
+--- !u!114 &7666425455890063941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050617879357873866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1414fc847e44167aff78d0424ce9fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.ButtonSound
+  _audioClip: {fileID: 8300000, guid: 2c1f13afb0fd649d6a89c5b65ab04a94, type: 3}
 --- !u!1 &8367718697906035359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1536,7 @@ GameObject:
   - component: {fileID: 2790373353088287277}
   - component: {fileID: 6125400062218366917}
   - component: {fileID: 8274421666604599479}
+  - component: {fileID: 8696633218705276381}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -1188,3 +1661,16 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 2652307207469822017}
   _pressed: {fileID: 2497647049025984773}
+--- !u!114 &8696633218705276381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367718697906035359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1414fc847e44167aff78d0424ce9fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.UI.Widgets.ButtonSound
+  _audioClip: {fileID: 8300000, guid: 2c1f13afb0fd649d6a89c5b65ab04a94, type: 3}
