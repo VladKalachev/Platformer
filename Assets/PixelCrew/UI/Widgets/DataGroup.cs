@@ -17,7 +17,7 @@ namespace PixelCrew.UI.Widgets
             _container =  container;
         }
         
-        public void SetData(List<TDataType> data)
+        public void SetData(IList<TDataType> data)
         {
            
             for (int i = _createdItem.Count; i < data.Count; i++)

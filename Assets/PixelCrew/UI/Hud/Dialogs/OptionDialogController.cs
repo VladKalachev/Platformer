@@ -9,11 +9,11 @@ namespace PixelCrew.UI.Hud.Dialogs
     {
         [SerializeField] private Text _contentText;
         [SerializeField] private Transform _container;
-        [SerializeField] private Prefab
+        [SerializeField] private OptionItemWidget _prefab;
         
         public void Show(OptionDialogData data)
         {
-            
+            _contentText.text = data.DialogText;
         }
     }
     
