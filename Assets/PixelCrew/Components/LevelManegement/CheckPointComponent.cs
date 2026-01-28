@@ -14,9 +14,11 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _setUnchecked;
 
         private GameSession _session;
+        private SpawnComponent _heroSpawn;
 
         private void Start()
         {
+            _heroSpawn = GetComponent<SpawnComponent>();
             _session = FindObjectOfType<GameSession>();
             if (_session.IsChecked(_id))
             {
@@ -26,6 +28,16 @@ namespace PixelCrew.Components
             {
                 _setUnchecked?.Invoke();
             }
+        }
+
+        public void Check()
+        {
+            _session.SetChecked(_id);
+        }
+
+        public void SpawnHero()
+        {
+            _heroSpawn.Spawn();
         }
     }
 }

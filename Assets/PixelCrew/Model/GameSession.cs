@@ -71,15 +71,24 @@ namespace PixelCrew.Model
             _trash.Dispose();
             InitModels();
         }
+        
+        public bool IsChecked(string id)
+        {
+           return _checkpoints.Contains(id);
+        }
 
+        public void SetChecked(string id)
+        {
+            if (!_checkpoints.Contains(id))
+            {
+                _checkpoints.Add(id);
+            }
+        }
+        
         private void OnDestroy()
         {
             _trash.Dispose();
         }
 
-        public bool IsChecked(string id)
-        {
-           return _checkpoints.Contains(id);
-        }
     }
 }
