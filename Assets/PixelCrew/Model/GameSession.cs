@@ -109,6 +109,7 @@ namespace PixelCrew.Model
         {
             if (!_checkpoints.Contains(id))
             {
+                Save();
                 _checkpoints.Add(id);
             }
         }
