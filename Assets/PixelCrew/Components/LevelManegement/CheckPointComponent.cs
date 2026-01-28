@@ -13,6 +13,7 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _setChecked;
         [SerializeField] private UnityEvent _setUnchecked;
 
+        public string Id => _id;
         private GameSession _session;
         private SpawnComponent _heroSpawn;
 

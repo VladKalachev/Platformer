@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using PixelCrew.Components;
 using PixelCrew.Model.Data;
 using PixelCrew.Utils.Disposables;
 using Unity.VisualScripting;
@@ -11,6 +13,7 @@ namespace PixelCrew.Model
     public class GameSession: MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
+        [SerializeField] private string _defaultCheckPoint;
         public PlayerData Data => _data;
 
         private PlayerData _save;
@@ -22,10 +25,13 @@ namespace PixelCrew.Model
 
         private void Awake()
         {
-            LoadHud();
+           
             
-            if (IsSessionExit())
+            var existsSession = GetExistsSession();
+            
+            if (existsSession != null)
             {
+                existsSession.StartSession(_defaultCheckPoint);
                 DestroyImmediate(gameObject);
             }
             else
@@ -33,6 +39,28 @@ namespace PixelCrew.Model
                 Save();
                 InitModels();
                 DontDestroyOnLoad(this);
+                StartSession(_defaultCheckPoint);
+            }
+        }
+
+        private void StartSession(string defaultCheckPoint)
+        {
+            SetChecked(defaultCheckPoint);
+            LoadHud();
+            SpawnHero();
+        }
+
+        private void SpawnHero()
+        {
+            var checkpoints = FindObjectsOfType<CheckPointComponent>();
+            var lastCheckPoint = _checkpoints.Last();
+            foreach (var checkPoint in checkpoints)
+            {
+                if (checkPoint.Id == lastCheckPoint)
+                {
+                    checkPoint.SpawnHero();
+                    break;
+                }
             }
         }
 
@@ -47,17 +75,17 @@ namespace PixelCrew.Model
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
-        private bool IsSessionExit()
+        private GameSession GetExistsSession()
         {
             var sessions = FindObjectsOfType<GameSession>();
             foreach (var gameSession in sessions)
             {
                 if (gameSession != this)
                 {
-                    return true;
+                    return gameSession;
                 }
             }
-            return false;
+            return null;
         }
 
         public void Save()
