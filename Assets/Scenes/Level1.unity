@@ -838,23 +838,38 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _clips:
-  - _name: idle
-    _sprites: []
-    _loop: 0
+  - _name: unchecked
+    _sprites:
+    - {fileID: 21300000, guid: 41082fa53dbc14136a9f3a9ec106df8e, type: 3}
+    - {fileID: 21300000, guid: a77ccae2a46b7478f94eb7cc12b51c4b, type: 3}
+    - {fileID: 21300000, guid: e6de370695f06482e83a8ebacf77cfd1, type: 3}
+    - {fileID: 21300000, guid: 594d9169696b94e66afdfe86b76e6fd7, type: 3}
+    - {fileID: 21300000, guid: 785499dec95b54dbf98e2bc6f9c3eadb, type: 3}
+    - {fileID: 21300000, guid: 938fcae4c068542ce81a621e8382445a, type: 3}
+    - {fileID: 21300000, guid: 04680750d89a84cae8c97845c150c746, type: 3}
+    - {fileID: 21300000, guid: db6b4c4de65ed4d9089cd830dfbb910b, type: 3}
+    _loop: 1
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
   - _name: transition
-    _sprites: []
+    _sprites:
+    - {fileID: 21300000, guid: e4433c0eac6b647fc9244f9d0875feb6, type: 3}
+    - {fileID: 21300000, guid: 8b0f9adddc9134462a32e4494fd82f28, type: 3}
+    - {fileID: 21300000, guid: 8db0304d786e048148f719c3b50e1296, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
   - _name: checked
-    _sprites: []
-    _loop: 0
+    _sprites:
+    - {fileID: 21300000, guid: ed9448965b7db4712b2f871978297b56, type: 3}
+    - {fileID: 21300000, guid: cedc5d1f2096b4afb96e8d2fdc98b8c3, type: 3}
+    - {fileID: 21300000, guid: 4c5880bdb00184d649628fa60b99127f, type: 3}
+    - {fileID: 21300000, guid: a15672cf283054691b449aaa08b1904c, type: 3}
+    _loop: 1
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
@@ -6985,6 +7000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 822892931}
+  - component: {fileID: 822892932}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
@@ -7009,6 +7025,26 @@ Transform:
   - {fileID: 468904308}
   m_Father: {fileID: 893829266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &822892932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822892930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c35e9248f9743f6bb1140af0cfe78a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.CheckPointComponent
+  _id: 
+  _setChecked:
+    m_PersistentCalls:
+      m_Calls: []
+  _setUnchecked:
+    m_PersistentCalls:
+      m_Calls: []
+  _heroSpawn: {fileID: 0}
 --- !u!1 &865066198
 GameObject:
   m_ObjectHideFlags: 0
