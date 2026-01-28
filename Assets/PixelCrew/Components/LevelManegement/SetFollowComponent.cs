@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace PixelCrew.Components
 {
-    [RequireComponent(typeof(CinemachineVirtualCamera))]
+    [RequireComponent(typeof(CinemachineCamera))]
     public class SetFollowComponent : MonoBehaviour
     {
         private void Start()
         {
-            var vCamera = GetComponent<CinemachineVirtualCamera>();
+            var vCamera = GetComponent<CinemachineCamera>();
             vCamera.Follow = FindObjectOfType<Hero>().transform;
         }
     }
