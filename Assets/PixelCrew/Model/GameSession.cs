@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using PixelCrew.Model.Data;
 using PixelCrew.Utils.Disposables;
 using Unity.VisualScripting;
@@ -16,6 +17,8 @@ namespace PixelCrew.Model
         
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         public QuickInventoryModel QuickInventory { get; private set; }
+        
+        private readonly List<string> _checkpoints = new List<string>();
 
         private void Awake()
         {
@@ -72,6 +75,11 @@ namespace PixelCrew.Model
         private void OnDestroy()
         {
             _trash.Dispose();
+        }
+
+        public bool IsChecked(string id)
+        {
+           return _checkpoints.Contains(id);
         }
     }
 }
