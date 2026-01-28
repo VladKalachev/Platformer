@@ -33,6 +33,7 @@ namespace PixelCrew.Components
         public void Check()
         {
             _session.SetChecked(_id);
+            _setChecked?.Invoke();
         }
 
         public void SpawnHero()
