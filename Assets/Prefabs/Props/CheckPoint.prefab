@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.CheckPointComponent
   _id: 
+  _heroSpawn: {fileID: 5037609017065237762}
   _setChecked:
     m_PersistentCalls:
       m_Calls:
