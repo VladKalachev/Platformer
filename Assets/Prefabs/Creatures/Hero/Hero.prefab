@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5733742500012436507}
   - component: {fileID: 3688221878773495377}
   m_Layer: 10
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3363632156205476869}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -715,6 +715,9 @@ GameObject:
   - component: {fileID: 8774862184860602711}
   - component: {fileID: 1156849858278382854}
   - component: {fileID: 3159139722725796863}
+  - component: {fileID: 2730631974423605199}
+  - component: {fileID: 209375724086708399}
+  - component: {fileID: 1626963850520649674}
   m_Layer: 10
   m_Name: Hero
   m_TagString: Player
@@ -731,7 +734,7 @@ Transform:
   m_GameObject: {fileID: 5008346943987993646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.29, y: -8.09, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -793,8 +796,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1291742779
-  m_SortingLayer: 6
+  m_SortingLayerID: -314198425
+  m_SortingLayer: 4
   m_SortingOrder: 100
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: eec2a1cc3693d46a1973bd8ead0f53ef, type: 3}
@@ -822,7 +825,7 @@ MonoBehaviour:
   _invertScale: 0
   _speed: 3
   _jumpSpeed: 12
-  _damageVelocity: 12
+  _damageVelocity: 20
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -841,6 +844,7 @@ MonoBehaviour:
   _superThrowParticles: 3
   _superThrowDelay: 0.2
   _hitDrop: {fileID: 1471758711908972744}
+  _throwSpawner: {fileID: 3688221878773495377}
 --- !u!114 &2882775969375054121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,6 +947,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: da10ca6b-9727-4302-9f5a-fc7e31ce87fe
     m_ActionName: 'Hero/Throw[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2882775969375054121}
+        m_TargetAssemblyTypeName: PixelCrew.Creatures.Hero.HeroInputReader, Assembly-CSharp
+        m_MethodName: OnNextItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b07f8c8a-293d-45ee-977a-03b2d4092db9
+    m_ActionName: 'Hero/NextItem[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -1022,7 +1042,7 @@ Animator:
   m_GameObject: {fileID: 5008346943987993646}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8dd574dd47be9498a854d516f66750d3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0e0cccfab9ff1463bb16d3f044d43c98, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1046,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9996f847a5ff24b078bf9bfd04d0e967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.HealtComponent
-  _health: 30
+  _health: 2
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1062,7 +1082,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3159139722725796863}
+      - m_Target: {fileID: 209375724086708399}
         m_TargetAssemblyTypeName: PixelCrew.Components.Audio.PlaySoundsComponent,
           Assembly-CSharp
         m_MethodName: Play
@@ -1081,7 +1101,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1626963850520649674}
         m_TargetAssemblyTypeName: PixelCrew.Components.ReloadLevelComponent, Assembly-CSharp
         m_MethodName: Reload
         m_Mode: 1
@@ -1143,7 +1163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b20d01027724b4693d0232f7d515811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Audio.PlaySoundsComponent
-  _source: {fileID: 2130252811632361302}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: 9496837219f81489a87a969b6795418c, type: 3}
@@ -1153,6 +1172,39 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 756760a1524c64c9f9e2eeef40190b8b, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 6dcf8c8c925e742049e65db026295517, type: 3}
+--- !u!81 &2730631974423605199
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008346943987993646}
+  m_Enabled: 0
+--- !u!114 &209375724086708399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008346943987993646}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b20d01027724b4693d0232f7d515811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.Audio.PlaySoundsComponent
+  _sounds: []
+--- !u!114 &1626963850520649674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008346943987993646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6cc499ff306049d3bc560a81aed79d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.ReloadLevelComponent
 --- !u!1 &6380198530561433016
 GameObject:
   m_ObjectHideFlags: 0

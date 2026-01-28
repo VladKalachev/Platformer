@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1699784347000695328}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.528, y: 0.415, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c35e9248f9743f6bb1140af0cfe78a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PixelCrew.Components.CheckPointComponent
-  _id: 
+  _id: level1-checkpoint1
   _heroSpawn: {fileID: 5037609017065237762}
   _setChecked:
     m_PersistentCalls:
@@ -218,7 +218,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6551214739837966347}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -245,7 +245,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -8.34, y: 1.14}
   m_Radius: 0.5
 --- !u!114 &6821284820916664013
 MonoBehaviour:
@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 7576596098225290830}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.189, y: 1.254, z: 0}
+  m_LocalPosition: {x: 0.29, y: 1.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
